@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clicker Farm</title>
+
+    <link rel="stylesheet" href="./style.css?v=2">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            👨‍🌾
+            <span>Clicker Farm</span>
+        </div>
+
+        <button class="settings">⚙️</button>
+
+    </header>
+
+
+    <!-- COINS -->
+    <div class="coins">
+
+        <img src="Assets/coin.png" alt="Coin">
+
+        <div>
+            <div id="money">0</div>
+            <span>Coins</span>
+        </div>
+
+    </div>
+
+
+    <!-- ENERGY + DAILY REWARD -->
+    <div class="topCards">
+
+        <!-- ENERGY -->
+        <div class="energyCard">
+
+            <div class="energyIcon">⚡</div>
+
+            <div class="energyInfo">
+
+                <div>Energy</div>
+
+                <div class="energyBar">
+                    <div id="energyFill"></div>
+                </div>
+
+                <span id="energyText">100/100</span>
+
+            </div>
+
+            <button id="energyPlus">+</button>
+
+        </div>
+
+
+        <!-- DAILY REWARD -->
+        <div
+            class="dailyCard"
+            id="dailyRewardButton"
+        >
+
+            <div class="gift">
+                🎁
+            </div>
+
+            <div class="dailyRewardInfo">
+
+                <b>Daily Reward</b>
+
+                <span id="dailyTimer">
+                    23:59:40
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CORN -->
+    <main>
+
+        <div class="cornArea">
+
+            <div class="floatingCoins"></div>
+
+            <button
+                id="cornBtn"
+                class="cornButton"
+            >
+
+                <img
+                    src="Assets/corn.png"
+                    alt="Corn"
+                >
+
+            </button>
+
+        </div>
+
+
+        <!-- STATS -->
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="statIcon">⚡</div>
+
+                <small>Power</small>
+
+                <strong id="power">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="statIcon">👨‍🌾</div>
+
+                <small>Farmers</small>
+
+                <strong id="farmers">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="statIcon">🪙</div>
+
+                <small>Income</small>
+
+                <strong>
+                    <span id="perSecond">0</span>/s
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="statIcon">❤️</div>
+
+                <small>Energy</small>
+
+                <strong id="energyStat">
+                    100
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- UPGRADE BUTTONS -->
+        <div class="actionButtons">
+
+            <button
+                id="upgradeBtn"
+                class="upgrade"
+            >
+
+                <span class="bigIcon">
+                    ⬆️
+                </span>
+
+                <span>
+
+                    <b>UPGRADE</b>
+
+                    <small>
+                        🪙
+                        <span id="upgradeCost">
+                            50
+                        </span>
+                    </small>
+
+                </span>
+
+            </button>
+
+
+            <button
+                id="minerBtn"
+                class="farmer"
+            >
+
+                <span class="bigIcon">
+                    👨‍🌾
+                </span>
+
+                <span>
+
+                    <b>BUY FARMER</b>
+
+                    <small>
+                        🪙
+                        <span id="farmerCost">
+                            100
+                        </span>
+                    </small>
+
+                </span>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottomNav">
+
+        <button>
+
+            <span>🏪</span>
+
+            <small>
+                SHOP
+            </small>
+
+        </button>
+
+
+       <button id="questsButton">
+
+    <span>🎁</span>
+
+    <small>
+        QUESTS
+    </small>
+
+</button>
+
+
+        <button id="statsButton">
+
+    <span>🏆</span>
+
+    <small>
+        STATS
+    </small>
+
+</button>
+
+
+        <button id="moreButton">
+
+    <span>▦</span>
+
+    <small>
+        MORE
+    </small>
+
+</button>
+
+    </nav>
+
+
+    <!-- =========================
+         DAILY REWARD POPUP
+    ========================== -->
+
+    <div
+        id="dailyReward"
+        class="daily-reward-overlay"
+    >
+
+        <div class="daily-reward-popup">
+
+            <!-- CLOSE -->
+            <button
+                id="closeDailyReward"
+                class="daily-close"
+            >
+                ✕
+            </button>
+
+
+            <!-- REWARDS -->
+            <div class="reward-slots">
+
+                <button
+                    class="reward-slot"
+                    data-reward="100"
+                >
+                    <span class="reward-icon">🪙</span>
+                    <span>100</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="200"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>200</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="300"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>300</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="400"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>400</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="500"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>500</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="600"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>600</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="700"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>700</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="800"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>800</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="900"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>900</span>
+                </button>
+
+
+                <button
+                    class="reward-slot"
+                    data-reward="1000"
+                >
+                    <span class="reward-icon">🌽</span>
+                    <span>1000</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+<!-- SETTINGS POPUP -->
+<div id="settingsOverlay" class="settings-overlay">
+
+    <div class="settings-window">
+
+        <!-- Your PNG -->
+        <img src="Assets/settings.png" class="settings-image">
+
+        <!-- Clickable X -->
+        <button id="closeSettings" class="settings-close"></button>
+
+        <!-- Music ON/OFF switch -->
+        <button id="musicToggle" class="music-toggle">
+            <span class="toggle-circle"></span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- GAME MUSIC -->
+<audio id="gameMusic" loop>
+    <source src="Assets/music.mp3" type="audio/mpeg">
+</audio>
+<!-- =========================
+     STATS POPUP
+========================= -->
+<!-- =========================
+     STATS POPUP
+========================= -->
+
+<div id="statsOverlay" class="stats-overlay">
+
+    <div class="stats-window">
+
+        <img
+            src="Assets/stats.png"
+            class="stats-image"
+            alt="Stats"
+        >
+
+        <!-- CLOSE -->
+        <button
+            id="closeStats"
+            class="stats-close"
+        ></button>
+<div class="stat-box bonus-box">
+
+    <div class="stat-label">
+        TOTAL % BONUS
+    </div>
+
+    <div
+        id="statsBonus"
+        class="stat-value"
+    >
+        +0%
+    </div>
+
+</div>
+
+        <!-- TOTAL TIME -->
+        <div class="stat-box time-box">
+
+            <div class="stat-label">
+                TOTAL TIME PLAYED
+            </div>
+
+            <div
+                id="totalTimePlayed"
+                class="stat-value"
+            >
+                00:00:00
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL COINS -->
+        <div class="stat-box coins-box">
+
+            <div class="stat-label">
+                TOTAL COINS EARNED
+            </div>
+
+            <div
+                id="totalCoinsEarned"
+                class="stat-value"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <!-- COINS PER SECOND -->
+        <div class="stat-box cps-box">
+
+            <div class="stat-label">
+                COINS PER SECOND
+            </div>
+
+            <div
+                id="statsPerSecond"
+                class="stat-value"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <!-- TAP POWER -->
+        <div class="stat-box power-box">
+
+            <div class="stat-label">
+                TAP POWER
+            </div>
+
+            <div
+                id="statsTapPower"
+                class="stat-value"
+            >
+                1
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <div
+            id="totalCoinsEarned"
+            class="stat-value coins-earned"
+        >
+            0
+        </div>
+
+
+        <div
+            id="statsPerSecond"
+            class="stat-value per-second"
+        >
+            0
+        </div>
+
+
+        <div
+            id="statsTapPower"
+            class="stat-value tap-power"
+        >
+            1
+        </div>
+
+    </div>
+
+</div>
+<div id="statsOverlay" class="stats-overlay">
+
+    <div class="stats-window">
+
+        <img
+            src="Assets/stats.png"
+            class="stats-image"
+            alt="Stats"
+        >
+
+        <!-- Invisible clickable X -->
+        <button
+            id="closeStats"
+            class="stats-close"
+        ></button>
+
+    </div>
+
+</div>
+<!-- =========================
+     REFERRAL POPUP
+========================= -->
+
+<div
+    id="referralOverlay"
+    class="referral-overlay"
+>
+
+    <div class="referral-window">
+
+        <!-- CLOSE -->
+        <button
+            id="closeReferral"
+            class="referral-close"
+        >
+            ✕
+        </button>
+
+
+        <!-- TITLE -->
+        <div class="referral-title">
+            👥 REFERRAL
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="referral-description">
+
+            Invite your friends
+            and earn rewards!
+
+        </div>
+
+
+        <!-- FRIENDS -->
+       <div class="referral-card">
+
+            <span class="referral-icon">
+                👥
+            </span>
+
+            <div>
+
+                <small>
+                    FRIENDS INVITED
+                </small>
+
+                <strong id="referralCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- BONUS -->
+        <div class="referral-card">
+
+            <span class="referral-icon">
+                🪙
+            </span>
+
+            <div>
+
+                <small>
+                    REFERRAL BONUS
+                </small>
+
+                <<strong id="referralBonus">
+    +0%
+</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INVITE BUTTON -->
+        <button
+            id="inviteFriends"
+            class="invite-button"
+        >
+            👥 INVITE FRIENDS
+        </button>
+
+
+        <!-- REFERRAL LINK -->
+        <div class="referral-link-title">
+            YOUR REFERRAL LINK
+        </div>
+
+        <div class="referral-link-box">
+
+            <span id="referralLink">
+                Loading...
+            </span>
+
+            <button id="copyReferral">
+                📋
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
