@@ -2009,9 +2009,6 @@ body {
     }
 
 }
-/* TELEGRAM TEST */
-.music-toggle {
+body {
     background: red !important;
-    width: 150px !important;
-    height: 70px !important;
 }
