@@ -22,6 +22,21 @@ let tapBonus =
 let upgradeCost =
     Number(localStorage.getItem("upgradeCost")) || 50;
 
+/* =========================================================
+   SEEDS
+========================================================= */
+
+let riceSeeds =
+    Number(localStorage.getItem("riceSeeds")) || 0;
+
+let potatoSeeds =
+    Number(localStorage.getItem("potatoSeeds")) || 0;
+
+let cornSeeds =
+    Number(localStorage.getItem("cornSeeds")) || 0;
+
+    updateInventory();
+
 let energyUpgradeCost = Number(
     localStorage.getItem("energyUpgradeCost")
 );
@@ -2404,6 +2419,9 @@ const farmersDisplay =
 const perSecondDisplay =
     document.getElementById("perSecond");
 
+const fieldMoney =
+    document.getElementById("fieldMoney");
+
 const energyStat =
     document.getElementById("energyStat");
 
@@ -2679,6 +2697,11 @@ if (gemsDisplay) {
   moneyDisplay.textContent =
     formatNumber(money);
 
+    if (fieldMoney) {
+    fieldMoney.textContent =
+        moneyDisplay.textContent;
+}
+
    const totalTapPower =
     power * (1 + Number(tapBonus || 0) / 100);
 
@@ -2813,6 +2836,7 @@ cornBtn.addEventListener("click", function () {
     saveGame();
 
     showFloatingCoin();
+
 });
 
 
@@ -11485,3 +11509,457 @@ buyTokenCPS.addEventListener(
 
     }
 );
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+const fieldButton = document.getElementById("fieldButton");
+const fieldOverlay = document.getElementById("fieldOverlay");
+const fieldReturnButton = document.getElementById("fieldReturnButton");
+
+
+/* =========================================================
+   OPEN FIELD
+========================================================= */
+
+if (fieldButton && fieldOverlay) {
+
+    fieldButton.addEventListener("click", function () {
+
+        console.log("FIELD CLICKED");
+
+        fieldOverlay.style.setProperty(
+            "display",
+            "block",
+            "important"
+        );
+
+        fieldOverlay.style.setProperty(
+            "visibility",
+            "visible",
+            "important"
+        );
+
+        fieldOverlay.style.setProperty(
+            "opacity",
+            "1",
+            "important"
+        );
+
+        fieldOverlay.style.setProperty(
+            "z-index",
+            "999999999",
+            "important"
+        );
+
+        console.log("ENTERING FIELD");
+
+        console.log(
+            "OVERLAY DISPLAY:",
+            fieldOverlay.style.display
+        );
+
+        console.log(
+            "OVERLAY COMPUTED:",
+            window.getComputedStyle(fieldOverlay).display
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   RETURN FROM FIELD
+========================================================= */
+
+if (fieldReturnButton && fieldOverlay) {
+
+    fieldReturnButton.addEventListener("click", function () {
+
+        console.log("RETURN BUTTON CLICKED");
+
+        fieldOverlay.style.display = "none";
+
+        console.log("FIELD CLOSED");
+
+    });
+
+}
+
+/* =========================================================
+   MARKET WINDOW
+========================================================= */
+
+const fieldMarketButton =
+    document.getElementById("fieldMarketButton");
+
+const marketWindow =
+    document.getElementById("marketWindow");
+
+const marketCloseButton =
+    document.getElementById("marketCloseButton");
+
+
+/* OPEN MARKET */
+
+if (fieldMarketButton && marketWindow) {
+
+    fieldMarketButton.addEventListener("click", function () {
+
+        console.log("MARKET OPENED");
+
+        marketWindow.style.display = "block";
+
+    });
+
+}
+
+
+/* CLOSE MARKET */
+
+if (marketCloseButton && marketWindow) {
+
+    marketCloseButton.addEventListener("click", function () {
+
+        console.log("MARKET CLOSED");
+
+        marketWindow.style.display = "none";
+
+    });
+
+}
+
+/* =========================================================
+   BUY SEEDS
+========================================================= */
+
+const buyRiceSeed =
+    document.getElementById("buyRiceSeed");
+
+const buyPotatoSeed =
+    document.getElementById("buyPotatoSeed");
+
+const buyCornSeed =
+    document.getElementById("buyCornSeed");
+
+
+/* =========================================================
+   BUY RICE SEED - 10,000
+========================================================= */
+
+if (buyRiceSeed) {
+
+    buyRiceSeed.addEventListener(
+        "click",
+        function () {
+
+            const cost = 10000;
+
+
+            if (money < cost) {
+
+                return;
+
+            }
+
+
+            money -= cost;
+
+            riceSeeds += 1;
+
+
+            localStorage.setItem(
+                "riceSeeds",
+                riceSeeds
+            );
+
+
+            updateDisplay();
+            updateInventory();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   BUY POTATO SEED - 20,000
+========================================================= */
+
+if (buyPotatoSeed) {
+
+    buyPotatoSeed.addEventListener(
+        "click",
+        function () {
+
+            const cost = 20000;
+
+
+            if (money < cost) {
+
+                return;
+
+            }
+
+
+            money -= cost;
+
+            potatoSeeds += 1;
+
+
+            localStorage.setItem(
+                "potatoSeeds",
+                potatoSeeds
+            );
+
+
+            updateDisplay();
+            updateInventory();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   BUY CORN SEED - 30,000
+========================================================= */
+
+if (buyCornSeed) {
+
+    buyCornSeed.addEventListener(
+        "click",
+        function () {
+
+            const cost = 30000;
+
+
+            if (money < cost) {
+
+                return;
+
+            }
+
+
+            money -= cost;
+
+            cornSeeds += 1;
+
+
+            localStorage.setItem(
+                "cornSeeds",
+                cornSeeds
+            );
+
+
+            updateDisplay();
+            updateInventory();
+
+        }
+    );
+
+}
+
+
+function updateFieldCoins() {
+
+    const fieldCoinsAmount =
+        document.getElementById("fieldCoinsAmount");
+
+    if (!fieldCoinsAmount) return;
+
+    fieldCoinsAmount.textContent =
+        formatNumber(money);
+}
+
+
+/* =========================================================
+   FIELD PLOTS
+========================================================= */
+
+const fieldPlots =
+    document.getElementById("fieldPlots");
+
+
+if (fieldPlots) {
+
+    for (let i = 1; i <= 81; i++) {
+
+        const plot =
+            document.createElement("button");
+
+        plot.className =
+            "fieldPlot locked";
+
+        plot.dataset.plot = i;
+
+        const cost =
+            i * 1000000;
+
+        plot.dataset.cost = cost;
+
+        plot.innerHTML = `
+            <span>🔒</span>
+            <small>${formatNumber(cost)}</small>
+        `;
+
+        fieldPlots.appendChild(plot);
+    }
+}
+
+
+if (fieldPlots) {
+
+    fieldPlots.addEventListener(
+        "click",
+        function (event) {
+
+            const plot =
+                event.target.closest(".fieldPlot");
+
+            if (!plot) return;
+
+            if (plot.classList.contains("unlocked")) {
+                return;
+            }
+
+            const cost =
+                Number(plot.dataset.cost);
+
+            if (money < cost) {
+                return;
+            }
+
+            money -= cost;
+
+            plot.classList.remove("locked");
+            plot.classList.add("unlocked");
+
+            updateDisplay();
+            saveGame();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+const fieldInventoryButton =
+    document.getElementById(
+        "fieldInventoryButton"
+    );
+
+const inventoryPopup =
+    document.getElementById(
+        "inventoryPopup"
+    );
+
+const closeInventoryButton =
+    document.getElementById(
+        "closeInventoryButton"
+    );
+
+
+/* OPEN INVENTORY */
+
+if (
+    fieldInventoryButton &&
+    inventoryPopup
+) {
+
+    fieldInventoryButton.addEventListener(
+        "click",
+        function () {
+
+            inventoryPopup.style.display =
+                "block";
+
+            updateInventory();
+
+        }
+    );
+
+}
+
+
+/* CLOSE INVENTORY */
+
+if (
+    closeInventoryButton &&
+    inventoryPopup
+) {
+
+    closeInventoryButton.addEventListener(
+        "click",
+        function () {
+
+            inventoryPopup.style.display =
+                "none";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE INVENTORY
+========================================================= */
+
+function updateInventory() {
+
+    const inventoryRiceSeed =
+        document.getElementById(
+            "inventoryRiceSeed"
+        );
+
+    const inventoryPotatoSeed =
+        document.getElementById(
+            "inventoryPotatoSeed"
+        );
+
+    const inventoryCornSeed =
+        document.getElementById(
+            "inventoryCornSeed"
+        );
+
+
+    if (inventoryRiceSeed) {
+
+        inventoryRiceSeed.textContent =
+            riceSeeds;
+
+    }
+
+
+    if (inventoryPotatoSeed) {
+
+        inventoryPotatoSeed.textContent =
+            potatoSeeds;
+
+    }
+
+
+    if (inventoryCornSeed) {
+
+        inventoryCornSeed.textContent =
+            cornSeeds;
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIAL INVENTORY UPDATE
+========================================================= */
+
+updateInventory();

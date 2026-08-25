@@ -7199,3 +7199,1259 @@ font-size: 9px!important;;
         0 1px 0 #4c1d95,
         0 3px 5px rgba(0, 0, 0, 0.4);
 }
+
+/* =========================
+   FIELD NAV
+========================= */
+
+.fieldNav {
+    max-width: 720px;
+
+    margin: 5px auto 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 0 5px;
+}
+
+
+/* =========================
+   FIELD BUTTON
+========================= */
+
+#fieldButton {
+
+    /* SAME WIDTH AS ONE BOTTOM NAV BUTTON */
+    grid-column: 1;
+
+    width: 100%;
+    height: 75px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 5px 0 #071f3d;
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease;
+}
+
+
+/* =========================
+   FIELD ICON
+========================= */
+
+#fieldButton .bigIcon {
+    font-size: 32px;
+}
+
+
+/* =========================
+   FIELD TEXT
+========================= */
+
+#fieldButton > span:last-child {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#fieldButton b {
+    display: block;
+
+    font-size: 18px;
+}
+
+#fieldButton small {
+    display: block;
+
+    font-size: 11px;
+
+    opacity: .8;
+}
+
+
+/* =========================
+   FIELD HOVER
+========================= */
+
+#fieldButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #071f3d,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 18px rgba(30,120,220,.7);
+}
+
+
+/* =========================
+   FIELD PRESS
+========================= */
+
+#fieldButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #071f3d;
+}
+
+/* =========================================================
+   FIELD OVERLAY
+========================================================= */
+#fieldOverlay {
+    display: none !important;
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #07111f !important;
+
+    z-index: 2147483647 !important;
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   FIELD BACKGROUND
+========================================================= */
+
+#fieldBackground {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   CLICKER FARM LOGO
+========================================================= */
+
+#fieldLogo {
+    position: absolute !important;
+
+    top: 20px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 220px !important;
+    height: auto !important;
+
+    z-index: 10 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   RETURN BUTTON
+========================================================= */
+
+#fieldReturnButton {
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 30px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 180px !important;
+    height: 55px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 2147483647 !important;
+
+    border: 3px solid rgba(0,0,0,.35) !important;
+
+    border-radius: 16px !important;
+
+    color: white !important;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    ) !important;
+
+    font-size: 16px !important;
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    pointer-events: auto !important;
+
+    box-shadow:
+        0 5px 0 #071f3d,
+        0 0 12px rgba(30,120,220,.5) !important;
+}
+
+/* =========================================================
+   FIELD MENU
+========================================================= */
+
+#fieldMenu {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    z-index: 999999999;
+
+}
+
+
+/* =========================================================
+   FIELD MENU COLUMNS
+========================================================= */
+
+.fieldMenuColumn {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   FIELD MENU BUTTON BASE
+========================================================= */
+
+.fieldMenuButton {
+
+    width: 150px;
+
+    height: 55px;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.fieldMenuIcon {
+
+    font-size: 23px;
+
+}
+
+
+/* =========================================================
+   SEEDS
+========================================================= */
+
+.fieldSeedsButton {
+
+    background: linear-gradient(
+        #9e285d,
+        #661536
+    );
+
+    box-shadow:
+        0 5px 0 #420d25,
+        0 0 12px rgba(220,60,130,.55);
+
+}
+
+
+/* =========================================================
+   MARKET
+========================================================= */
+
+.fieldMarketButton {
+
+    background: linear-gradient(
+        #72c94f,
+        #3f8c2b
+    );
+
+    box-shadow:
+        0 5px 0 #28631b,
+        0 0 12px rgba(110,220,70,.55);
+
+}
+
+
+/* =========================================================
+   SEEDS UPGRADES
+========================================================= */
+
+.fieldSeedsUpgradesButton {
+
+    background: linear-gradient(
+        #8a6036,
+        #50351f
+    );
+
+    box-shadow:
+        0 5px 0 #352214,
+        0 0 12px rgba(170,110,55,.55);
+
+}
+
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+.fieldInventoryButton {
+
+    background: linear-gradient(
+        #a83232,
+        #641c1c
+    );
+
+    box-shadow:
+        0 5px 0 #461313,
+        0 0 12px rgba(220,55,55,.55);
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.fieldMenuButton:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* SEEDS HOVER */
+
+.fieldSeedsButton:hover {
+
+    box-shadow:
+        0 8px 0 #420d25,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(240,70,145,.85);
+
+}
+
+
+/* MARKET HOVER */
+
+.fieldMarketButton:hover {
+
+    box-shadow:
+        0 8px 0 #28631b,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(120,240,80,.85);
+
+}
+
+
+/* SEEDS UPGRADES HOVER */
+
+.fieldSeedsUpgradesButton:hover {
+
+    box-shadow:
+        0 8px 0 #352214,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(190,125,65,.85);
+
+}
+
+
+/* INVENTORY HOVER */
+
+.fieldInventoryButton:hover {
+
+    box-shadow:
+        0 8px 0 #461313,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(240,60,60,.85);
+
+}
+
+
+/* =========================================================
+   PRESS DOWN
+========================================================= */
+
+.fieldMenuButton:active {
+
+    transform: translateY(5px);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #fieldMenu {
+
+        gap: 5px;
+
+        bottom: 20px;
+
+    }
+
+
+    .fieldMenuColumn {
+
+        gap: 7px;
+
+    }
+
+
+    .fieldMenuButton {
+
+        width: 105px;
+
+        height: 50px;
+
+        font-size: 11px;
+
+        gap: 4px;
+
+    }
+
+
+    .fieldMenuIcon {
+
+        font-size: 18px;
+
+    }
+
+
+    #fieldReturnButton {
+
+        width: 120px !important;
+
+        height: 50px !important;
+
+        font-size: 12px !important;
+
+    }
+
+}
+
+/* LEFT COLUMN */
+.fieldMenuColumn:first-child {
+    transform: translateX(-80px);
+}
+
+/* RIGHT COLUMN */
+.fieldMenuColumn:last-child {
+    transform: translateX(80px);
+}
+
+/* =========================================================
+   MARKET WINDOW
+========================================================= */
+
+#marketWindow {
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 500px;
+
+    z-index: 99999999999;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #07111f;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.6),
+        0 0 25px rgba(30,120,220,.45);
+}
+
+
+/* =========================================================
+   MARKET IMAGE
+========================================================= */
+
+#marketImage {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+#marketCloseButton {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   CLOSE HOVER
+========================================================= */
+
+#marketCloseButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 0 #071f3d,
+        0 10px 14px rgba(0,0,0,.45),
+        0 0 18px rgba(30,120,220,.8);
+}
+
+
+/* =========================================================
+   CLOSE PRESS
+========================================================= */
+
+#marketCloseButton:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 #071f3d;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #marketWindow {
+        width: 92%;
+    }
+
+    #marketCloseButton {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================================
+   MARKET ITEMS
+========================================================= */
+
+#marketItems {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 85%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SEED BUTTON
+========================================================= */
+
+.marketSeedButton {
+
+    width: 80%;
+    height: 65px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    border-radius: 16px;
+
+    color: white;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    );
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 0 #071f3d,
+        0 0 12px rgba(30,120,220,.5);
+
+    transition:
+        transform .08s ease,
+        box-shadow .08s ease;
+
+         margin-left: 40px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.marketSeedIcon {
+
+    font-size: 30px;
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.marketSeedInfo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.marketSeedInfo b {
+
+    font-size: 17px;
+
+}
+
+
+.marketSeedInfo small {
+
+    font-size: 12px;
+
+    opacity: .85;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.marketSeedButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #071f3d,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(30,120,220,.85);
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.marketSeedButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #071f3d;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #marketItems {
+
+        width: 82%;
+
+        gap: 8px;
+
+    }
+
+
+    .marketSeedButton {
+
+        height: 55px;
+
+    }
+
+
+    .marketSeedIcon {
+
+        font-size: 25px;
+
+    }
+
+
+    .marketSeedInfo b {
+
+        font-size: 14px;
+
+    }
+
+
+    .marketSeedInfo small {
+
+        font-size: 10px;
+
+    }
+
+}
+
+/* =========================================================
+   SEED ITEMS - LIGHT GREEN
+========================================================= */
+
+.marketSeedButton {
+    background: linear-gradient(
+        #72c94f,
+        #3f8c2b
+    );
+
+    box-shadow:
+        0 5px 0 #28631b,
+        0 0 12px rgba(110,220,70,.55);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.marketSeedButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #28631b,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(120,240,80,.85);
+}
+
+
+/* =========================================================
+   PRESS DOWN
+========================================================= */
+
+.marketSeedButton:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #28631b;
+}
+
+/* =========================================================
+   FIELD COINS
+========================================================= */
+
+#fieldCoins {
+    position: absolute;
+
+    top: 105px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        #a66a35,
+        #633719
+    );
+
+    border: 3px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.12);
+
+    box-sizing: border-box;
+
+    padding: 8px 18px;
+
+    min-width: 150px;
+
+    color: white;
+
+    pointer-events: none;
+}
+
+#fieldCoins img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+#fieldMoney {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+#fieldCoins span {
+    display: block;
+
+    font-size: 11px;
+
+    opacity: .8;
+}
+
+/* =========================================================
+   FIELD PLOTS
+========================================================= */
+
+#fieldPlots {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90vw, 630px);
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+
+    gap: 4px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   PLOT
+========================================================= */
+
+.fieldPlot {
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+
+    border: 2px solid rgba(255,255,255,.12);
+    border-radius: 5px;
+
+    background: rgba(0,0,0,.55);
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* LOCK */
+
+.fieldPlot span {
+
+    font-size: clamp(12px, 2.5vw, 22px);
+
+    line-height: 1;
+}
+
+
+/* COST */
+
+.fieldPlot small {
+
+    margin-top: 3px;
+
+    font-size: clamp(7px, 1.4vw, 12px);
+
+    font-weight: bold;
+
+    color: white;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.fieldPlot.locked:hover {
+
+    transform: scale(1.04);
+
+    background: rgba(0,0,0,.7);
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.15);
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.fieldPlot:active {
+
+    transform: scale(.96);
+}
+
+
+/* =========================================================
+   UNLOCKED
+========================================================= */
+
+.fieldPlot.unlocked {
+
+    background: rgba(0,0,0,.35);
+
+    border-color: rgba(255,255,255,.08);
+
+    cursor: default;
+}
+
+.fieldPlot.unlocked span,
+.fieldPlot.unlocked small {
+
+    display: none;
+}
+
+/* =========================================================
+   INVENTORY POPUP
+========================================================= */
+
+#inventoryPopup {
+
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(
+        90vw,
+        420px
+    );
+
+    height: auto;
+
+    z-index: 999999999;
+
+}
+
+
+/* =========================================================
+   INVENTORY IMAGE
+========================================================= */
+
+#inventoryBackground {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#closeInventoryButton {
+
+    position: absolute;
+
+    top: 3%;
+
+    right: 3%;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    color: transparent;
+
+    box-shadow: none;
+
+}
+
+/* =========================================================
+   INVENTORY ITEMS
+========================================================= */
+
+#inventoryItems {
+
+    position: absolute;
+
+    top: 28%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   INVENTORY ITEM
+========================================================= */
+
+.inventoryItem {
+
+    width: 100%;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 12px;
+
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    border: 2px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 12px;
+
+    color: white;
+
+    box-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ICON */
+
+.inventoryItem > span {
+
+    font-size: 35px;
+
+}
+
+
+/* TEXT */
+
+.inventoryItem div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.inventoryItem b {
+
+    font-size: 16px;
+
+}
+
+
+.inventoryItem small {
+
+    font-size: 14px;
+
+    opacity: 0.85;
+
+}
+
+
+.inventoryItem small::before {
+
+    content: "x ";
+
+}
