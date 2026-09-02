@@ -1,0 +1,10412 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body {
+    min-height: 100vh;
+
+    background-image: url("Assets/background.png");
+
+    background-size: cover;
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 25px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 4px rgba(0,0,0,.6);
+}
+
+.settings {
+    width: 52px;
+    height: 52px;
+
+    border: 3px solid #74451d;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        #8c5a2b,
+        #553018
+    );
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,.4);
+}
+
+
+/* =========================
+   COINS
+========================= */
+
+.coins {
+    position: relative;
+
+     
+    
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 5px;
+
+    text-align: center;
+
+
+    background: linear-gradient(
+        #a66a35,
+        #633719
+    );
+
+    border: 3px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.12);
+
+    box-sizing: border-box;
+
+     width: 100%;
+
+}
+
+.coins img {
+     width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 4px 3px rgba(0,0,0,.35));
+}
+
+#money {
+    font-size: 25px;
+
+    font-weight: 900;
+
+    line-height: 40px;
+
+    color: white;
+
+    text-shadow:
+        2px 3px 4px rgba(0,0,0,.6);
+}
+
+.coins span {
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-shadow:
+        1px 2px 3px rgba(0,0,0,.6);
+}
+
+
+/* =========================
+   TOP CARDS
+========================= */
+
+.topCards {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    max-width: 720px;
+
+    margin: 18px auto 0;
+
+    padding: 0 15px;
+}
+
+.energyCard,
+.dailyCard {
+    height: 58px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(25,77,92,.95),
+        rgba(30,100,80,.9)
+    );
+
+    border: 2px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+}
+
+
+/* ENERGY */
+
+.energyCard {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 5px 8px;
+
+    flex: 1;
+}
+
+.energyIcon {
+    font-size: 35px;
+}
+
+.energyInfo {
+    flex: 1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.energyBar {
+    height: 8px;
+
+    width: 100%;
+
+    background: #143d30;
+    
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin: 3px 0;
+}
+
+#energyFill {
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        #b9ff39,
+        #49a900
+    );
+
+    transition: width .2s;
+}
+
+.energyInfo span {
+    font-size: 11px;
+}
+
+#energyPlus {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #62c62c;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   DAILY REWARD CARD
+========================= */
+
+.dailyCard {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    min-width: 190px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform .12s;
+}
+
+.dailyCard:hover {
+    transform: scale(1.02);
+}
+
+.dailyCard:active {
+    transform: scale(.97);
+}
+
+.gift {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.dailyRewardInfo {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.dailyCard b {
+    font-size: 12px;
+}
+
+#dailyTimer {
+    color: #ffe900;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   CORN
+========================= */
+
+.cornArea {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 250px;
+
+    margin-top: 0;
+}
+
+.cornButton {
+    width: 215px;
+    height: 215px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        transform .08s;
+}
+
+.cornButton img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 12px 7px rgba(0,0,0,.35));
+}
+
+.cornButton:active {
+    transform: scale(.92);
+}
+
+
+/* =========================
+   FLOATING COINS
+========================= */
+
+.floatingCoins {
+    position: absolute;
+
+    width: 330px;
+    height: 280px;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.floatingCoins span {
+    position: absolute;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 3px rgba(0,0,0,.5);
+
+    animation: float 1s forwards;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    max-width: 650px;
+
+    margin: -5px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: linear-gradient(
+        rgba(65,34,12,.97),
+        rgba(91,46,15,.97)
+    );
+
+    border: 3px solid #d99539;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 12px rgba(0,0,0,.4);
+}
+
+.stat {
+    text-align: center;
+
+    padding: 6px 4px;
+
+    border-right:
+        2px solid rgba(0,0,0,.4);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.statIcon {
+    font-size: 21px;
+
+    height: 27px;
+}
+
+.stat small {
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+    margin-top: 2px;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 21px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.actionButtons {
+    max-width: 720px;
+
+    margin: 15px auto;
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 0 5px;
+}
+
+.actionButtons button {
+    flex: 1;
+
+    height: 62px;
+
+    border-radius: 17px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    box-shadow:
+        0 6px 0 rgba(0,0,0,.25);
+
+    transition:
+        transform .08s,
+        box-shadow .08s;
+}
+
+.actionButtons button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 rgba(0,0,0,.25);
+}
+
+.upgrade {
+    background: linear-gradient(
+        #8be33a,
+        #3d9d16
+    );
+}
+
+.farmer {
+    background: linear-gradient(
+        #32b9ff,
+        #1471c5
+    );
+}
+
+.bigIcon {
+    font-size: 28px;
+}
+
+.actionButtons b {
+    display: block;
+
+    font-size: 18px;
+}
+
+.actionButtons small {
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottomNav {
+    max-width: 720px;
+
+    margin: 5px auto 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 0 5px;
+}
+
+.bottomNav button {
+    height: 75px;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,.3);
+
+    background: linear-gradient(
+        #8d55b8,
+        #542a77
+    );
+}
+
+/* LEADERBOARD */
+#leaderboardButton {
+    background: linear-gradient(
+        #e9b52b,
+        #a66a0d
+    );
+}
+
+.bottomNav span {
+    display: block;
+
+    font-size: 30px;
+}
+
+.bottomNav small {
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.bottomNav button:nth-child(2) {
+    background: linear-gradient(
+        #d86d28,
+        #9b3d12
+    );
+}
+
+.bottomNav button:nth-child(3) {
+    background: linear-gradient(
+        #e99b27,
+        #9b5a0d
+    );
+}
+
+.bottomNav button:nth-child(4) {
+    background: linear-gradient(
+        #858d98,
+        #464b53
+    );
+}
+
+.bottomNav button:nth-child(5) {
+    background: linear-gradient(
+        #4caf50,
+        #246b2a
+    );
+}
+
+.bottomNav span {
+    display: block;
+
+    font-size: 30px;
+}
+
+.bottomNav small {
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   DAILY REWARD POPUP
+========================= */
+
+.daily-reward-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.65);
+
+    z-index: 99999;
+}
+
+.daily-reward-popup {
+    position: relative;
+
+    width: min(90vw, 520px);
+
+    aspect-ratio: 1 / 1;
+
+    background-image:
+        url("Assets/daily-reward.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+}
+
+
+/* CLOSE */
+
+.daily-close {
+    position: absolute;
+
+    top: 3%;
+    right: 3%;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #c83b2e;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    box-shadow:
+        0 4px 0 #762019,
+        0 5px 10px rgba(0,0,0,.4);
+}
+
+.daily-close:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #762019;
+}
+
+
+/* =========================
+   REWARD SLOTS
+========================= */
+/* =========================
+   REWARD SLOTS CONTAINER
+========================= */
+
+.reward-slots {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+}
+
+/* =========================
+   REWARD SLOT
+========================= */
+
+.reward-slot {
+
+    position: absolute;
+
+    width: 13%;
+    height: 12%;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+}
+/* =========================
+   REWARD ICON
+========================= */
+
+.reward-slot .reward-icon {
+
+    position: absolute;
+
+    left: 50%;
+    top: 42%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: clamp(22px, 6vw, 32px);
+
+    line-height: 1;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   REWARD NUMBER
+========================= */
+
+.reward-slot > span:last-child {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    font-size: clamp(10px, 2.5vw, 14px);
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    text-shadow:
+        1px 1px 2px black;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.reward-slot:hover .reward-icon {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.1);
+}
+
+
+/* =========================
+   CLICK
+========================= */
+
+.reward-slot:active .reward-icon {
+
+    transform:
+        translate(-50%, -50%)
+        scale(.9);
+}
+
+
+/* =========================
+   COLLECTED
+========================= */
+
+.reward-slot.collected {
+
+    opacity: .35;
+
+    cursor: default;
+}
+
+
+.reward-slot.collected::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: clamp(25px, 7vw, 38px);
+
+    color: #5cff4a;
+
+    text-shadow:
+        2px 2px 3px #000;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 55px;
+
+        padding: 8px 12px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .settings {
+        width: 42px;
+        height: 42px;
+
+        font-size: 23px;
+    }
+
+    #money {
+        font-size: 38px;
+    }
+
+    .coins img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .topCards {
+        margin-top: 10px;
+
+        gap: 7px;
+
+        padding: 0 8px;
+    }
+
+    .energyCard,
+    .dailyCard {
+        height: 65px;
+    }
+
+    .dailyCard {
+        min-width: 0;
+
+        flex: .9;
+
+        padding: 5px;
+    }
+
+    .dailyCard b {
+        font-size: 10px;
+    }
+
+    #dailyTimer {
+        font-size: 11px;
+    }
+
+    .cornArea {
+        height: 270px;
+    }
+
+    .cornButton {
+        width: 205px;
+        height: 205px;
+    }
+
+    .stats {
+        width: calc(100% - 16px);
+
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .stat {
+        padding: 7px 2px;
+    }
+
+    .stat small {
+        font-size: 10px;
+    }
+
+    .stat strong {
+        font-size: 21px;
+    }
+
+    .actionButtons {
+        gap: 8px;
+
+        padding: 0 8px;
+    }
+
+    .actionButtons button {
+        height: 67px;
+    }
+
+    .bigIcon {
+        font-size: 29px;
+    }
+
+    .actionButtons b {
+        font-size: 14px;
+    }
+
+    .actionButtons small {
+        font-size: 13px;
+    }
+
+    .bottomNav {
+        gap: 5px;
+
+        padding: 0 8px;
+    }
+
+    .bottomNav button {
+        height: 68px;
+    }
+
+    .bottomNav span {
+        font-size: 25px;
+    }
+
+
+    /* DAILY POPUP */
+
+    .daily-reward-popup {
+        width: 96vw;
+    }
+
+    .daily-close {
+        width: 42px;
+        height: 42px;
+
+        font-size: 24px;
+    }
+
+    .reward-slots {
+        gap: 7px;
+    }
+
+    .reward-icon {
+        font-size: 25px;
+    }
+
+    .reward-slot > span:last-child {
+        font-size: 11px;
+    }
+}
+/* =========================
+   SETTINGS POPUP
+========================= */
+
+.settings-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .68);
+
+    z-index: 100000;
+
+    padding: 15px;
+}
+
+
+/* =========================
+   SETTINGS PNG
+========================= */
+
+.settings-popup {
+
+    position: relative;
+
+    width: min(92vw, 520px);
+
+    aspect-ratio: 2 / 3;
+
+    background-image:
+        url("Assets/settings.png");
+
+    background-size: 100% 100%;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    flex-shrink: 1;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+/*
+   The PNG already has a red X.
+   This invisible button sits directly
+   over that X and makes it clickable.
+*/
+
+.settings-close {
+
+    position: absolute;
+
+    /*
+       Position of the red X
+       in the generated PNG.
+    */
+
+    top: 19.5%;
+    right: 7%;
+
+    width: 16%;
+    height: 8%;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    padding: 0;
+
+    /*
+       Makes the HTML button invisible.
+    */
+
+    color: transparent;
+}
+
+
+/* =========================
+   CLOSE BUTTON HOVER
+========================= */
+
+.settings-close:hover {
+
+    transform: scale(1.05);
+}
+
+
+.settings-close:active {
+
+    transform: scale(.94);
+}
+
+
+/* =========================
+   MUSIC TOGGLE
+========================= */
+
+/*
+   This sits over the EMPTY wooden
+   music control in the PNG.
+*/
+
+/* =========================
+   ON / OFF TEXT
+========================= */
+
+#musicToggleText {
+
+    width: 28%;
+
+    height: 70%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            #76dc3c,
+            #398e19
+        );
+
+    border: 3px solid #285e13;
+
+    color: white;
+
+    font-size: clamp(11px, 2.5vw, 16px);
+
+    font-weight: 900;
+
+    text-shadow:
+        1px 2px 2px rgba(0,0,0,.6);
+
+    box-shadow:
+        0 4px 0 #214f10,
+
+        0 5px 8px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .1s;
+}
+
+
+/* =========================
+   BUTTON CLICK
+========================= */
+
+.music-toggle:active #musicToggleText {
+
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        0 1px 0 #214f10;
+}
+
+
+/* =========================
+   MUSIC OFF
+========================= */
+
+.music-toggle.off #musicToggleText {
+
+    background:
+        linear-gradient(
+            #777,
+            #444
+        );
+
+    border-color: #292929;
+
+    box-shadow:
+        0 4px 0 #222;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .settings-overlay {
+
+        padding: 8px;
+    }
+
+    .settings-popup {
+
+        width: min(
+            94vw,
+            calc(90vh * 2 / 3)
+        );
+
+        max-height: 90vh;
+    }
+
+}
+/* =========================
+   SETTINGS POPUP
+========================= */
+
+.settings-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 9999;
+}
+
+.settings-overlay.active {
+    display: flex;
+}
+
+
+/* SETTINGS PNG */
+
+.settings-window {
+    position: relative;
+
+    width: min(92vw, 500px);
+
+    aspect-ratio: 864 / 1184;
+}
+
+.settings-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CLOSE X
+========================= */
+
+.settings-close {
+    position: absolute;
+
+    /* X position on your PNG */
+    top: 7.5%;
+    right: 4.5%;
+
+    width: 13%;
+    height: 9%;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   MUSIC TOGGLE
+========================= */
+
+.music-toggle {
+    position: absolute;
+
+    /* Right side of MUSIC bar */
+     top: 28%;
+    right: 20%;
+
+    width: 82px;
+    height: 42px;
+
+    border: 3px solid #4a260e;
+    border-radius: 30px;
+
+    background: #777;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 3px 4px rgba(0, 0, 0, 0.35),
+        0 3px 4px rgba(0, 0, 0, 0.35);
+
+    z-index: 10;
+
+    transition: background 0.2s;
+}
+
+
+/* Toggle circle */
+
+.toggle-circle {
+    position: absolute;
+
+    top: 5px;
+    left: 11px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    border: 2px solid #444;
+
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.2s;
+}
+
+
+/* ON state */
+
+.music-toggle.on {
+    background: #4caf50;
+}
+
+.music-toggle.on .toggle-circle {
+    transform: translateX(39px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .settings-window {
+        width: 94vw;
+    }
+
+    .music-toggle {
+        top: 31%;
+        right: 20%;
+        width: 82px;
+        height: 42px;
+    }
+
+    .toggle-circle {
+        width: 26px;
+        height: 26px;
+    }
+
+    .music-toggle.on .toggle-circle {
+        transform: translateX(31px);
+    }
+}
+/* =========================================================
+   STATS POPUP
+========================================================= */
+
+.stats-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    z-index: 99999;
+
+    padding: 10px;
+}
+
+
+/* OPEN */
+
+.stats-overlay.active {
+    display: flex;
+}
+
+
+/* PNG WINDOW */
+
+/* PNG */
+
+.stats-image {
+    height: 100dvh;
+    width: auto;
+    max-height: 100dvh;
+    display: block;
+    pointer-events: none;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.stats-close {
+
+    position: absolute;
+
+    /*
+       Adjust these if the X
+       on your PNG is somewhere else.
+    */
+
+    top: 4%;
+    right: 3%;
+
+    width: 14%;
+    height: 9%;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+
+/* CLICK EFFECT */
+
+.stats-close:active {
+    transform: scale(0.92);
+}
+/* =========================================================
+   STATS VALUES
+========================================================= */
+
+
+/* TIME */
+
+.stat-value.time {
+
+    top: 25%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* TOTAL COINS */
+
+.stat-value.coins-earned {
+
+    top: 38%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* COINS PER SECOND */
+
+.stat-value.per-second {
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* TAP POWER */
+
+.stat-value.tap-power {
+
+    top: 62%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+/* =========================================================
+   STATS TEXT
+========================================================= */
+
+.stat-box {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+
+    text-align: center;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* LABEL */
+
+.stat-label {
+
+    color: #ffe4a3;
+
+    font-size: clamp(12px, 3vw, 18px);
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        2px 2px 3px rgba(0,0,0,.8);
+
+    margin-bottom: 4px;
+}
+
+
+/* VALUE */
+
+.stat-value {
+
+    color: white;
+
+    font-size: clamp(20px, 5vw, 32px);
+
+    font-weight: 900;
+
+    text-shadow:
+        2px 3px 4px rgba(0,0,0,.8);
+
+}
+
+
+/* =========================================================
+   POSITIONS
+========================================================= */
+/* REMOVE these */
+
+.time-box {
+    top: 21%;
+}
+
+.coins-box {
+    top: 33%;
+}
+
+.cps-box {
+    top: 46%;
+}
+
+.power-box {
+    top: 58%;
+}
+
+.bonus-box {
+    top: 71%;
+}
+/* =========================================================
+   REFERRAL POPUP
+========================================================= */
+
+.referral-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .68);
+
+    z-index: 100000;
+
+    padding: 12px;
+}
+
+
+/* OPEN */
+
+.referral-overlay.active {
+    display: flex;
+}
+
+
+/* WINDOW */
+
+.referral-window {
+
+    position: relative;
+
+    width: min(92vw, 500px);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px 22px 25px;
+
+    border-radius: 24px;
+
+    border: 4px solid #704016;
+
+    background:
+        linear-gradient(
+            #a96632,
+            #663715
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.65);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.referral-title {
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    color: #ffe1a0;
+
+    text-shadow:
+        2px 3px 3px rgba(0,0,0,.75);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.referral-description {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        1px 2px 2px rgba(0,0,0,.6);
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.referral-close {
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #c83b2e;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #762019;
+}
+
+
+.referral-close:active {
+
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #762019;
+}
+
+
+/* =========================================================
+   REFERRAL CARDS
+========================================================= */
+
+.referral-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    margin-bottom: 12px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(54, 27, 10, .65);
+
+    border: 2px solid
+        rgba(255,255,255,.15);
+
+    text-align: left;
+}
+
+
+.referral-icon {
+
+    font-size: 35px;
+
+    width: 45px;
+
+    text-align: center;
+}
+
+
+.referral-card small {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #ffd98a;
+
+    font-weight: bold;
+}
+
+
+.referral-card strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   INVITE BUTTON
+========================================================= */
+
+.invite-button {
+
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 8px;
+
+    border: 3px solid #315e12;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            #86df3d,
+            #3b9518
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #245d10,
+        0 7px 10px rgba(0,0,0,.35);
+}
+
+
+.invite-button:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #245d10;
+}
+
+
+/* =========================================================
+   REFERRAL LINK
+========================================================= */
+
+.referral-link-title {
+
+    margin-top: 20px;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #ffd98a;
+}
+
+
+.referral-link-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(0,0,0,.35);
+
+    border: 2px solid
+        rgba(255,255,255,.15);
+}
+
+
+#referralLink {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 12px;
+
+    text-align: left;
+}
+
+
+#copyReferral {
+
+    width: 42px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #704016;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .referral-window {
+
+        width: 94vw;
+
+        padding:
+            25px 15px 20px;
+    }
+
+    .referral-title {
+
+        font-size: 27px;
+    }
+
+    .referral-description {
+
+        font-size: 14px;
+    }
+
+}
+/* =========================
+   REFERRAL LINK
+========================= */
+
+.referral-link-box {
+
+    margin: 15px;
+
+    padding: 12px;
+
+    background: rgba(0,0,0,.25);
+
+    border: 2px solid rgba(255,255,255,.25);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+#referralLink {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    word-break: break-all;
+
+    color: white;
+}
+
+
+/* =========================
+   REFERRAL COUNT
+========================= */
+
+.referral-count {
+
+    text-align: center;
+
+    margin: 15px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+#referralCount {
+
+    color: #ffe900;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   COPY BUTTON
+========================= */
+
+#copyReferralBtn {
+
+    display: block;
+
+    width: calc(100% - 30px);
+
+    margin: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        #76d83c,
+        #3d981b
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #24610f;
+}
+
+#copyReferralBtn:active {
+
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #24610f;
+}
+/* =========================
+   QUEST WINDOW
+========================= */
+
+.quest-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+   align-items: center;
+justify-content: center;
+
+
+    z-index: 9999;
+}
+
+
+.quest-overlay.show {
+    display: flex;
+}
+
+
+/* =========================
+   QUEST BOARD
+========================= */
+
+.quest-board {
+    position: relative;
+
+    width: min(92vw, 500px);
+
+    aspect-ratio: 784 / 1200;
+
+    overflow: hidden;
+        margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   QUEST PNG
+========================= */
+
+.quest-background {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.quest-close {
+    position: absolute;
+
+    top: 8%;
+    right: 8%;
+
+    width: 12%;
+    height: 8%;
+
+    border: none;
+
+    background: transparent;
+
+    color: transparent;
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.quest-tabs {
+    position: absolute;
+
+    left: 14%;
+    right: 14%;
+
+    top: 27%;
+
+    height: 8%;
+
+    display: flex;
+
+    gap: 3%;
+
+    z-index: 20;
+}
+
+
+.quest-tab {
+    flex: 1;
+
+    border: 3px solid #4a260e;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        #8b5a2b,
+        #5b3217
+    );
+
+    color: #fff1c4;
+
+    font-size: clamp(10px, 2.7vw, 16px);
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    text-shadow:
+        2px 2px 2px #3b1d08;
+
+    box-shadow:
+        inset 0 2px rgba(255,255,255,.2),
+        0 3px 5px rgba(0,0,0,.5);
+}
+
+
+.quest-tab.active {
+    background: linear-gradient(
+        #8bc63f,
+        #4f8d1d
+    );
+
+    color: white;
+}
+
+
+/* =========================
+   QUEST LIST
+========================= */
+
+.quest-list {
+    position: absolute;
+
+    left: 11%;
+    right: 11%;
+
+    top: 36%;
+    bottom: 15%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    overflow-y: auto;
+
+    z-index: 20;
+}
+
+
+.quest-list.hidden {
+    display: none;
+}
+
+
+/* =========================
+   QUEST ITEM
+========================= */
+
+.quest-item {
+    min-height: 70px;
+
+    padding: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    background: linear-gradient(
+        #70431f,
+        #4b2812
+    );
+
+    border: 2px solid #301707;
+
+    border-radius: 10px;
+
+    color: white;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.15),
+        0 3px 5px rgba(0,0,0,.4);
+}
+
+
+/* =========================
+   QUEST INFO
+========================= */
+
+.quest-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.quest-info b {
+    display: block;
+
+    color: #fff3cf;
+
+    font-size: clamp(11px, 3vw, 16px);
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.quest-progress {
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 6px;
+
+    background: #291407;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.quest-progress-fill {
+    height: 100%;
+
+    background: #78b82a;
+
+    border-radius: 10px;
+
+    transition: width 0.3s;
+}
+
+
+.quest-info small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #e8d2a4;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   REWARD
+========================= */
+
+.quest-reward {
+    width: 62px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #ffd633;
+
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+
+.quest-reward span {
+    display: block;
+
+    color: white;
+
+    font-size: 8px;
+
+    font-weight: normal;
+}
+/* =========================
+   MAIN QUEST
+========================= */
+
+.main-quests {
+    position: absolute;
+
+    top: 42%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+
+    max-height: 55%;
+    overflow-y: auto;
+
+    z-index: 20;
+}
+
+
+.main-quest {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    width: 82%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    background: rgba(80, 45, 20, 0.95);
+    border-radius: 8px;
+    color: white;
+}
+
+
+.quest-icon {
+    font-size: 35px;
+}
+
+
+.quest-info {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    text-align: left;
+}
+
+
+.quest-info b {
+    font-size: 14px;
+}
+
+
+.quest-info span {
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+
+.quest-action {
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.quest-action.completed {
+    opacity: 0.6;
+
+    cursor: default;
+}
+
+
+.hidden {
+    display: none !important;
+}
+/* Space between main quests */
+.main-quest + .main-quest {
+    margin-top: 10px;
+}
+
+/* Move both quests lower */
+#mainQuests {
+    padding-top: 180px;
+}
+
+/* =========================
+   MAIN QUESTS SCROLL
+========================= */
+#mainQuests {
+    height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin-top: 90px;
+    padding: 10px 12px 25px 12px;
+
+    box-sizing: border-box;
+
+    -webkit-overflow-scrolling: touch;
+}
+.main-quest {
+    flex-shrink: 0;
+}
+#mainQuests::-webkit-scrollbar {
+    width: 7px;
+}
+
+#mainQuests::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+#mainQuests::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+#dailyQuests {
+    width: 100%;
+    box-sizing: border-box;
+}}
+/* =========================
+   QUEST CONTENT
+========================= */
+
+.quest-board {
+    position: relative;
+}
+
+/* =========================
+   DAILY QUESTS
+========================= */
+
+.daily-quests {
+    position: absolute;
+
+    top: 42%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+    height: 45%;
+
+    z-index: 20;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-right: 6px;
+    box-sizing: border-box;
+}
+/* =========================
+   DAILY QUESTS SCROLL
+========================= */
+
+#dailyQuests {
+    width: 85%;
+    height: 40vh;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin-top: 90px;
+    padding: 10px 12px 25px 12px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+/* =========================
+   DAILY QUEST SCROLLBAR
+========================= */
+
+#dailyQuests::-webkit-scrollbar {
+    width: 7px;
+}
+
+#dailyQuests::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+#dailyQuests::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   DAILY QUEST
+========================= */
+.daily-quest {
+    flex-shrink: 0;
+}
+.daily-quest {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 8px;
+
+    width: 82%;
+    margin: 0 auto 8px auto;
+
+    box-sizing: border-box;
+
+    background: rgba(80, 45, 20, 0.95);
+
+    border-radius: 8px;
+
+    color: white;
+}
+/* =========================
+   DAILY QUEST CARD
+========================= */
+
+.daily-quest {
+    display: flex;
+    align-items: center;
+
+    width: 75%;
+    min-height: 70px;
+
+    margin: 0 auto;
+
+    padding: 10px 14px;
+
+    box-sizing: border-box;
+
+    gap: 10px;
+
+    background: rgba(80, 45, 20, 0.95);
+
+    border: 2px solid #4a2b14;
+    border-radius: 10px;
+ margin-bottom: 8px;
+    box-shadow:
+        inset 0 0 0 2px rgba(180, 120, 55, 0.35),
+        0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.quest-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.quest-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.quest-info b {
+    font-size: 14px;
+}
+
+.quest-info span {
+    font-size: 12px;
+}
+
+.quest-info small {
+    font-size: 10px;
+}
+
+.quest-action {
+    flex-shrink: 0;
+}
+/* =========================
+   TELEGRAM QUEST SIZE
+========================= */
+
+#mainQuests,
+#dailyQuests {
+    width: 68%;
+    height: 23vh;
+
+    margin-top: 65px;
+
+    padding: 8px 6px 20px 6px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   QUEST BOX SIZE
+========================= */
+
+.main-quest,
+.daily-quest {
+    width: 100%;
+
+    padding: 5px 6px;
+
+    margin-bottom: 6px;
+
+    gap: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* ICON */
+
+.quest-icon {
+    font-size: 27px;
+}
+
+
+/* TEXT */
+
+.quest-info b {
+    font-size: 11px;
+}
+
+.quest-info span {
+    font-size: 9px;
+
+    margin-top: 2px;
+}
+
+.quest-info small {
+    font-size: 8px;
+}
+
+
+/* BUTTON */#coins
+
+.quest-action {
+    padding: 5px 8px;
+
+    font-size: 9px;
+
+    border-radius: 6px;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+#mainQuests::-webkit-scrollbar,
+#dailyQuests::-webkit-scrollbar {
+    width: 5px;
+}
+
+#mainQuests::-webkit-scrollbar-thumb,
+#dailyQuests::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+#mainQuests::-webkit-scrollbar-track,
+#dailyQuests::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+}
+/* =========================
+   PREMIUM CURRENCY
+========================= */
+
+.premium-currency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: white;
+
+    gap: 4px;
+
+    min-width: 55px;
+    height: 32px;
+
+    z-index: 1;
+}
+
+.premium-currency #gems {
+    font-size: 21px;
+    font-weight: bold;
+
+    color: white;
+
+    display: inline-block;
+
+    min-width: 20px;
+}
+.shop-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.shop-container {
+    position: relative;
+
+    width: 90%;
+    max-width: 500px;
+
+    transform: translateY(-10px);
+
+    z-index: 10000;
+}
+
+.shop-image {
+    width: 100%;
+    display: block;
+
+    pointer-events: none;
+}
+
+.hidden {
+    display: none !important;
+}
+.shop-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+.shop-image {
+    width: 100%;
+    display: block;
+}
+
+/* SHOP BUTTONS */
+
+.shop-button {
+    position: absolute;
+
+    width: 100px;
+    height: 60px;
+
+    background: linear-gradient(
+        to bottom,
+        #d99a4e 0%,
+        #b86f32 45%,
+        #8e4d24 100%
+    );
+
+    border: 3px solid #5a2e16;
+    border-radius: 12px;
+
+    color: #fff4d6;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 0 #5a2e16,
+        -1px -1px 0 #8e4d24;
+
+    box-shadow:
+        inset 0 3px 0 rgba(255,255,255,0.25),
+        inset 0 -5px 0 rgba(60,25,10,0.25),
+        0 4px 0 #4a2614,
+        0 6px 10px rgba(0,0,0,0.4);
+
+    z-index: 10000;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.1s;
+}
+
+.shop-button span {
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.shop-button:active {
+    transform: translateY(3px);
+    box-shadow:
+        inset 0 3px 0 rgba(255,255,255,0.2),
+        0 1px 0 #4a2614;
+}
+
+/* BUTTON POSITIONS */
+
+#moneyShopButton {
+    left: 18%;
+    top: 30%;
+}
+
+#coinsShopButton {
+    left: 39% !important;
+    top: 35%;
+}
+
+#gemsShopButton {
+    right: 16%;
+    top: 30%;
+}
+.coins-shop {
+    position: absolute;
+
+    inset: -30px 0 0 0;
+
+    z-index: 10002;
+
+    overflow-y: auto;
+
+    background: transparent;
+
+    
+    padding-left: 110px;
+    padding-right: 20px;
+
+    box-sizing: border-box;
+}
+
+.coins-shop h2 {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.farmer-shop-item {
+    width: 95%;
+    min-height: 65px;
+
+    margin: 8px 0;
+
+    background: linear-gradient(
+        to bottom,
+        #d99a4e,
+        #8e4d24
+    );
+
+    border: 3px solid #5a2e16;
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 15px;
+
+    text-shadow: 2px 2px 0 #5a2e16;
+}
+
+.farmer-shop-item span {
+    flex: 1;
+}
+
+.farmer-shop-item small {
+    font-size: 13px;
+}
+
+#backToShop,
+#backFromGemsShop {
+    
+    display: block;
+
+    margin: 15px 0 15px 85px;
+
+    padding: 8px 20px;
+
+    background: #6b391e;
+    color: white;
+
+    border: 2px solid #3d1d0d;
+    border-radius: 8px;
+}
+.farmer-shop-item b {
+    font-size: 11px;
+    color: #ffe8a3;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+#buyNewbieQuest:disabled {
+    color: #f5f5f5;
+    opacity: 1;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+#dailyQuests button:disabled {
+    color: #f5f5f5 !important;
+    opacity: 1 !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6) !important;
+}
+#dailyQuests button:disabled,
+#dailyQuests button.completed {
+    color: #f5f5f5 !important;
+    opacity: 1 !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6) !important;
+}
+
+#gemsShop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+
+#gemsShop .shop-title {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.gem-shop-item {
+    width: 80%;
+    box-sizing: border-box;
+z-index: 1;
+    margin-left: 40px;
+    margin-top: 10px;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(80, 50, 20, 0.85);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 220, 120, 0.5);
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* FIRST GEM SHOP ITEM */
+.gem-shop-item:first-of-type {
+    margin-top: 0px;
+}
+
+.gem-shop-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.gem-shop-action {
+    min-width: 80px;
+}
+#backFromGemsShop {
+    position: absolute;
+
+    top: 375px;
+    left: 110px;
+
+    z-index: 20;
+}
+#buyBoostedCoins {
+    background: linear-gradient(
+        135deg,
+        #6b431f,
+        #3f2612
+    );
+
+    color: #ffd966;
+
+    border: 2px solid #a87535;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.7);
+
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.4);
+}
+#closeShop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 1000;
+}
+/* =========================
+   MAIN SHOP CLOSE BUTTON
+========================= */
+
+#shopOverlay .shop-container {
+    position: relative;
+}
+
+#closeShop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 9999;
+}
+/* =========================
+   COIN SHOP CLOSE BUTTON
+========================= */
+
+#coinsShop {
+    position: relative;
+}
+
+#closeCoinShop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 9999;
+}
+/* =========================
+   SHOP LAYER ORDER
+========================= */
+
+.shop-container {
+    position: relative;
+}
+
+.shop-image {
+    position: relative;
+    z-index: 1;
+}
+
+#coinsShop {
+    position: absolute;
+    z-index: 10;
+}
+
+#closeCoinShop {
+    z-index: 20;
+}
+/* =========================
+   GEM SHOP CLOSE BUTTON
+========================= */
+
+#gemsShop {
+    position: relative;
+}
+
+#closeGemsShop {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gems-shop {
+    position: absolute;
+    inset: 0;
+
+    z-index: 10002;
+
+    overflow-y: auto;
+
+    background: transparent;
+
+    padding-top: 20px;
+    padding-left: 110px;
+    padding-right: 20px;
+
+    box-sizing: border-box;
+}
+/* =========================
+   GEM SHOP LAYER
+========================= */
+
+#gemsShop {
+    position: absolute;
+    z-index: 99999 !important;
+}
+
+#closeGemsShop {
+    z-index: 100000 !important;
+}
+#closeShop,
+#closeTokensShop,
+#closeCoinShop,
+#closeGemsShop {
+    opacity: 0;
+}
+#backFromGemsShop {
+    transform: translateY(-20px);
+}
+/* Make both Gem Shop buttons identical */
+.gem-shop-action {
+    width: 110px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    box-sizing: border-box;
+}
+#buyBoostedCoins,
+#buyCoinsPerSecond,
+#buyLuckyChance,
+#buyEnergyPercent {
+    background: transparent !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border: 2px solid #8b5a2b !important;
+    border-radius: 15px;
+}
+.quest-overlay {
+    justify-content: flex-start !important;
+    padding-top: 20px !important;
+}
+
+.quest-board {
+    margin-top: 0 !important;
+}
+#moneyShopButton,
+#tokensShopButton,
+#coinsShopButton,
+#gemsShopButton {
+    position: absolute;
+}
+
+@media (max-width: 600px) {
+    #moneyShopButton,
+    #tokensShopButton,
+    #coinsShopButton,
+    #gemsShopButton {
+        transform: scale(0.7);
+    }
+}
+@media (max-width: 600px) {
+    #gemsShopButton {
+        left: 60%;
+    }
+}
+@media (max-width: 600px) {
+
+  /* MONEY */
+
+#moneyShopButton {
+    left: 18%;
+    top: 30%;
+}
+
+
+/* TOKENS - UNDER MONEY */
+
+#tokensShopButton {
+    left: 18%;
+    top: 50%;
+}
+
+
+/* COINS */
+
+#coinsShopButton {
+    left: 41%;
+    top: 30%;
+}
+
+
+/* GEMS */
+
+#gemsShopButton {
+    right: 16%;
+    top: 30%;
+}
+
+}
+@media (max-width: 600px) {
+
+    /* Coin shop content */
+    #coinShop {
+        width: 90%;
+        max-height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+
+    /* Farmer items */
+    .farmer-shop-item {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .farmer-shop-item {
+        width: 76%;
+        margin-left: 1%;
+        transform: translateY(-5px);
+        box-sizing: border-box;
+    }
+
+}
+/* =========================================
+   FARMERS SHOP - TELEGRAM MINI APP
+========================================= */
+
+.farmer-shop {
+    position: relative;
+
+    width: 92%;
+    max-width: 360px;
+
+    /* MAKE IT VERTICALLY SMALLER */
+    height: 220px;
+    max-height: 220px;
+
+    margin: 0 auto;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+
+    padding: 6px 8px;
+}
+
+
+/* =========================================
+   FARMER ITEMS
+========================================= */
+
+.farmer-shop-item {
+    width: 100%;
+    min-height: 48px;
+
+    margin: 4px 0;
+    padding: 5px 8px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   FARMER ICON
+========================================= */
+
+.farmer-shop-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   FARMER INFORMATION
+========================================= */
+
+.farmer-shop-info {
+    flex: 1;
+
+    min-width: 0;
+
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+/* =========================================
+   BUY BUTTON
+========================================= */
+
+.farmer-buy-button {
+    flex-shrink: 0;
+
+    padding: 5px 8px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TELEGRAM SCROLLBAR
+========================================= */
+
+.farmer-shop::-webkit-scrollbar {
+    width: 6px;
+}
+
+.farmer-shop::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.farmer-shop::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   SMALL TELEGRAM PHONE
+========================================= */
+
+@media (max-height: 700px) {
+
+    .farmer-shop {
+        height: 190px;
+        max-height: 190px;
+    }
+
+    .farmer-shop-item {
+        min-height: 44px;
+        margin: 3px 0;
+        padding: 4px 6px;
+    }
+
+    .farmer-shop-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .farmer-buy-button {
+        padding: 4px 7px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL TELEGRAM SCREEN
+========================================= */
+
+@media (max-height: 600px) {
+
+    .farmer-shop {
+        height: 165px;
+        max-height: 165px;
+    }
+
+    .farmer-shop-item {
+        min-height: 40px;
+        margin: 2px 0;
+        padding: 3px 5px;
+    }
+}
+
+/* =========================================
+   FARMERS - TELEGRAM SHOP
+========================================= */
+
+#coinsShop {
+    position: absolute !important;
+
+    /* POSITION */
+    top: 30px !important;
+    left: -30px !important;
+
+    /* SIZE */
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* FARMER BUTTONS */
+#coinsShop .farmer-shop-item {
+    width: 92% !important;
+
+    height: 43px !important;
+    min-height: 43px !important;
+
+    margin: 5px auto !important;
+    padding: 4px 7px !important;
+
+    box-sizing: border-box !important;
+
+    font-size: 14px !important;
+}
+
+
+/* BACK BUTTON */
+#coinsShop #backToShop {
+    display: block !important;
+
+    width: 92% !important;
+    height: 40px !important;
+
+    margin: 6px auto !important;
+}
+
+
+/* SCROLLBAR */
+#coinsShop::-webkit-scrollbar {
+    width: 5px;
+}
+
+#coinsShop::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+
+/* TELEGRAM SMALL SCREEN */
+@media (max-height: 700px) {
+
+    #coinsShop {
+        top: 125px !important;
+        left: -8px !important;
+
+        height: 285px !important;
+        max-height: 285px !important;
+    }
+
+    #coinsShop .farmer-shop-item {
+        height: 40px !important;
+        min-height: 40px !important;
+
+        margin: 4px auto !important;
+
+        font-size: 13px !important;
+    }
+}
+.coins-shop { 
+    transform: translate(-20px, 40px);
+}
+
+.coins-shop {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.farmer-shop-item {
+    width: calc(100% - 20px) !important;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#gemsShop {
+    transform: scale(0.8);
+    transform-origin: top center;
+}
+#gemsShop {
+    overflow-y: auto;
+    scroll-behavior: auto;
+}
+#gemsShop {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+#gemsShop {
+    overflow-y: auto !important;
+
+    height: 430px !important;
+
+    top: 130px !important;
+    bottom: auto !important;
+
+    box-sizing: border-box;
+}
+#gemsShop {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+.gem-scroll-area {
+    padding-top: 50 !important;
+}
+#gemsShop {
+    transform: translateY(30px) !important;
+}
+#gemsShop {
+    height: 50% !important;
+    overflow-y: auto !important;
+}
+#gemsShop {
+    top: 150px !important;
+    bottom: 100px !important;
+    height: auto !important;
+    overflow-y: auto !important;
+}
+#gemsShop::-webkit-scrollbar {
+    width: 5px;
+}
+
+#gemsShop::-webkit-scrollbar-track {
+    margin-top: 300px !important;
+    margin-bottom: 120px !important;
+}
+
+#gemsShop::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+.coins-shop {
+    padding-left: 70px !important;
+    padding-right: 5px !important;
+}
+
+.farmer-shop-item {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+.leaderboard-page {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.leaderboard-page.hidden {
+    display: none;
+}
+
+.leaderboard-image {
+    width: 90%;
+    max-width: 500px;
+
+    height: auto;
+
+    display: block;
+}
+
+.close-leaderboard {
+    position: absolute;
+
+    top: 75px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background:transparent;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+        opacity: 0;
+    cursor: pointer;
+
+}
+
+.leaderboard-tabs {
+
+      min-width: 40px !important;
+    height: 20px!important;;
+
+    position: absolute;
+
+    top: 210px!important;;
+
+    left: 50%!important;;
+
+font-size: 9px!important;;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 3px!important;;
+
+    z-index: 20;
+}
+
+.leaderboard-tab {
+    min-width: 65px !important;
+
+       height: 32px !important;
+
+    border-radius: 12px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+         #b8783d,
+    #70401f
+    );
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,.3);
+}
+
+.leaderboard-tab.active {
+    transform: translateY(2px);
+
+    box-shadow:
+        0 2px 0 rgba(0,0,0,.3);
+
+    filter: brightness(1.2);
+}
+.leaderboard-list {
+    position: absolute;
+
+    top: 250px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+    max-width: 360px;
+
+    height: 200px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    z-index: 15;
+}
+
+/* Each player */
+.leaderboard-row {
+    display: grid;
+
+    grid-template-columns: 35px 1fr auto;
+
+    align-items: center;
+
+    height: 40px;
+
+    margin-bottom: 4px;
+
+    padding: 0 8px;
+
+    box-sizing: border-box;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        #a66a35,
+        #633719
+    );
+
+    border: 2px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Rank */
+.leaderboard-row .rank {
+    font-size: 18px;
+}
+
+/* Player name */
+.player-name {
+    text-align: left;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+/* Coins */
+.player-coins {
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+.leaderboard-tab {
+    position: relative;
+    z-index: 30;
+    pointer-events: auto;
+}
+
+.currency-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+.currency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 5px 10px;
+
+    background: linear-gradient(
+        #a66a35,
+        #633719
+    );
+
+    border: 2px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.35),
+        inset 0 2px 0 rgba(255,255,255,.1);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.currency img,
+.currency-icon {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    font-size: 24px;
+}
+#dailyQuestTimer {
+    width: 100%;
+    text-align: center;
+
+    margin-top: 8px;
+    margin-bottom: 6px;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 3px #000;
+}
+
+.daily-quest-timer-title {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+#dailyQuestCountdown {
+    font-size: 18px;
+    line-height: 20px;
+
+    letter-spacing: 1px;
+}
+#energyRefillCounter {
+    display: block;
+    position: relative;
+    top: 2px;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* =========================================
+   ALL DAILY QUESTS — SAME STYLE
+========================================= */
+
+.daily-quest {
+    width: 100%;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    margin: 8px 0;
+    padding: 8px 10px;
+
+    background: linear-gradient(
+        to bottom,
+        #d99a4e,
+        #8e4d24
+    );
+
+    border: 3px solid #5a2e16;
+    border-radius: 12px;
+
+    color: white;
+}
+
+
+/* QUEST ICON */
+
+.daily-quest .quest-icon {
+    width: 45px;
+    min-width: 45px;
+
+    text-align: center;
+
+    font-size: 28px;
+}
+
+
+/* QUEST TEXT */
+
+.daily-quest .quest-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 8px;
+
+    line-height: 1.1;
+}
+
+.daily-quest .quest-info b {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.daily-quest .quest-info span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.daily-quest .quest-info small {
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   QUEST COUNTER — SAME FOR ALL
+========================================= */
+
+.daily-quest .quest-action {
+    width: 70px;
+    min-width: 70px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: linear-gradient(
+        to bottom,
+        #f0b65a,
+        #a95d27
+    );
+
+    border: 2px solid #5a2e16;
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    box-sizing: border-box;
+}
+
+
+/* DISABLED QUESTS LOOK THE SAME */
+
+.daily-quest .quest-action:disabled {
+    opacity: 1;
+
+    background: linear-gradient(
+        to bottom,
+        #f0b65a,
+        #a95d27
+    );
+
+    color: white;
+}
+
+.game-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.game-logo img {
+    width: 220px;
+    height: auto;
+    display: block;
+    transform: translateX(55px);
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#achievementsButton {
+   background: linear-gradient(
+    rgba(0, 95, 115, .97),
+    rgba(0, 190, 215, .97)
+    );
+
+    border: 3px solid #008fa3;
+
+    border-radius: 18px;
+
+    color: white;
+
+    box-shadow:
+        0 7px 12px rgba(0,0,0,.4);
+}
+
+/* =========================
+   ACHIEVEMENTS OVERLAY
+========================= */
+
+.achievements-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 999999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.achievements-overlay.active {
+    display: flex;
+}
+
+
+/* =========================
+   ACHIEVEMENTS WINDOW
+========================= */
+
+.achievements-window {
+    position: relative;
+
+    width: 90%;
+    max-width: 500px;
+
+    z-index: 1000000;
+}
+
+
+/* =========================
+   ACHIEVEMENTS PNG
+========================= */
+
+.achievements-image {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.achievements-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 1000000;
+}
+
+/* =========================
+   ACHIEVEMENT BUTTONS
+========================= */
+
+.achievement-buttons {
+    position: absolute;
+
+    top: 18%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+}
+
+.achievement-buttons button {
+    width: 100%;
+
+    height: 28px;
+
+    border: 3px solid #008fa3;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.4);
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.5);
+}
+
+.achievement-buttons button:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   COINS ACHIEVEMENTS
+========================= */
+
+.coins-achievements {
+    display: none;
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 40%;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    z-index: 20;
+}
+
+.coins-achievements.active {
+    display: grid;
+}
+
+.coin-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.4);
+
+    cursor: pointer;
+}
+
+.coin-achievement span {
+    font-size: 25px;
+}
+
+.coin-achievement b {
+    font-size: 15px;
+}
+
+.coin-achievement.unlocked {
+    border-color: #00eaff;
+
+    box-shadow:
+        0 0 12px rgba(0, 220, 255, .8);
+}
+
+.achievement-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.cps-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+
+    cursor: pointer;
+}
+
+.cps-achievement span {
+    font-size: 25px;
+}
+
+.cps-achievement b {
+    font-size: 14px;
+}
+
+.achievement-back {
+    grid-column: 1 / -1;
+
+    display: block;
+
+    width: 120px;
+    height: 40px;
+
+    margin: 10px auto 0;
+
+    border: 2px solid #008fa3;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+}
+
+/* =========================
+   ACHIEVEMENTS POPUP
+========================= */
+
+.achievements-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 999999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.achievements-overlay.active {
+    display: flex !important;
+}
+
+
+/* =========================
+   ACHIEVEMENTS WINDOW
+========================= */
+
+.achievements-window {
+    position: relative;
+
+    width: 90vw;
+    max-width: 500px;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    z-index: 1000000;
+}
+
+
+/* =========================
+   ACHIEVEMENTS PNG
+========================= */
+
+.achievements-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    position: relative;
+
+    visibility: visible;
+    opacity: 1;
+}
+
+/* =========================
+   ACHIEVEMENTS POPUP
+========================= */
+
+.achievements-overlay {
+    display: none !important;
+
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 999999 !important;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.achievements-overlay.active {
+    display: flex !important;
+}
+
+.achievements-window {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 90vw !important;
+    max-width: 500px !important;
+
+    height: auto !important;
+
+    min-height: 100px !important;
+
+    flex-shrink: 0 !important;
+
+    z-index: 1000000 !important;
+}
+
+.achievements-image {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 1px !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* =========================
+   CPS ACHIEVEMENTS
+========================= */
+
+#cpsAchievements {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 65%;
+
+    z-index: 30;
+}
+
+#cpsAchievements .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+.cps-achievement {
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+    z-index: 31;
+}
+
+#cpsAchievements {
+    position: absolute;
+
+    top: 25%;
+    left: 55%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 30;
+}
+
+#cpsAchievements .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+#cpsAchievements .achievement-back {
+    display: block;
+
+    margin: 8px auto 0;
+
+    width: 90px;
+    height: 32px;
+
+    font-size: 13px;
+}
+
+/* =========================
+   ALL ACHIEVEMENT GRIDS
+========================= */
+#coinsAchievements,
+#cpsAchievements,
+#clickAchievements,
+#gemsAchievements,
+#farmerAchievements {
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 10;
+}
+
+/* =========================
+   COINS GRID
+========================= */
+
+.coins-achievements {
+    display: none;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+}
+
+.coins-achievements.active {
+    display: grid;
+}
+
+
+/* =========================
+   CPS GRID
+========================= */
+
+#cpsAchievements {
+    display: none;
+}
+
+#cpsAchievements .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+.achievement-back {
+    grid-column: 1 / -1;
+
+    width: 80px;
+    height: 30px;
+
+    margin: 6px auto 0;
+
+    border: 2px solid #008fa3;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+}
+
+/* =========================
+   STATS FINAL FIX
+========================= */
+
+.stats-window {
+    position: relative;
+}
+
+.stats-scroll {
+    position: absolute;
+
+    top: 150px;
+    left: 10px;
+    right: 10px;
+    bottom: 150px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+/* REMOVE ALL OLD POSITIONING */
+.stats-scroll .stat-box,
+.stats-scroll .time-box,
+.stats-scroll .coins-box,
+.stats-scroll .cps-box,
+.stats-scroll .power-box,
+.stats-scroll .bonus-box {
+    position: relative !important;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box;
+
+    transform: none !important;
+}
+
+
+/* TEXT */
+.stats-scroll .stat-label,
+.stats-scroll .stat-value {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    white-space: normal !important;
+    overflow: visible !important;
+}
+
+/* =========================
+   STATS SCROLLBAR
+========================= */
+
+.stats-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.stats-scroll::-webkit-scrollbar-track {
+    background: rgba(50, 25, 10, 0.7);
+    border-radius: 10px;
+}
+
+.stats-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #d99539,
+        #a96820
+    );
+
+    border: 2px solid #4b260e;
+
+    border-radius: 10px;
+}
+
+.stats-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        #f0b653,
+        #c27b28
+    );
+}
+
+/* =========================
+   CLICK ACHIEVEMENTS
+========================= */
+
+#clickAchievements {
+    display: none;
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 50;
+}
+
+#clickAchievements.active {
+    display: block;
+}
+
+
+/* GRID */
+
+.click-achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+
+/* BUTTONS */
+
+.click-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+
+    cursor: pointer;
+}
+
+.click-achievement span {
+    font-size: 25px;
+}
+
+.click-achievement b {
+    font-size: 14px;
+}
+
+
+/* BACK */
+
+#clickAchievements .achievement-back {
+    display: block;
+
+    width: 90px;
+    height: 32px;
+
+    margin: 8px auto 0;
+
+    border: 2px solid #008fa3;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =========================
+   CLICK ACHIEVEMENTS
+========================= */
+
+#clickAchievements {
+    display: none;
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 50;
+}
+
+#clickAchievements.active {
+    display: block;
+}
+
+#clickAchievements .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+#clickAchievements .click-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.35);
+
+    cursor: pointer;
+}
+
+#clickAchievements .click-achievement span {
+    font-size: 25px;
+}
+
+#clickAchievements .click-achievement b {
+    font-size: 14px;
+}
+
+#clickAchievements .achievement-back {
+    display: block;
+
+    margin: 8px auto 0;
+
+    width: 90px;
+    height: 32px;
+
+    font-size: 13px;
+}
+
+/* =========================
+   ACHIEVEMENT PAGES
+========================= */
+
+.achievement-page {
+    display: none;
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 100;
+}
+
+.achievement-page.active {
+    display: block;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.achievement-page .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: repeat(3, auto);
+
+    gap: 6px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ALL ACHIEVEMENT SQUARES
+========================= */
+
+.achievement-page .achievement-grid > button {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    box-sizing: border-box;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   CLICK BUTTONS
+========================= */
+
+.click-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.achievement-back {
+    display: block;
+
+    margin: 8px auto 0;
+
+    width: 90px;
+    height: 32px;
+
+    border: 2px solid #008fa3;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =========================
+   ACHIEVEMENT PAGES
+========================= */
+
+.achievement-page {
+    display: none;
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50%;
+
+    z-index: 100;
+}
+
+.achievement-page.active {
+    display: block;
+}
+
+
+/* =========================
+   3 × 3 GRID
+========================= */
+
+.achievement-page .achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ALL 9 SQUARES
+========================= */
+
+.achievement-page .achievement-grid > button {
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.gem-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.gem-achievement span {
+    font-size: 25px;
+}
+
+.gem-achievement b {
+    font-size: 14px;
+}
+
+.farmer-achievement {
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid #008fa3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(0, 95, 115, .97),
+        rgba(0, 190, 215, .97)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.farmer-achievement span {
+    font-size: 25px;
+}
+
+.farmer-achievement b {
+    font-size: 14px;
+}
+
+.farmer-achievement small {
+    font-size: 12px;
+}
+
+/* =========================
+   FARMER SHOP - FANCY ITEMS
+========================= */
+
+.farmer-shop-item {
+    position: relative;
+
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+
+    color: white;
+
+    box-shadow:
+        0 5px 0 rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.12s ease,
+        filter 0.12s ease,
+        box-shadow 0.12s ease;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   FARMERS = GREEN
+========================= */
+
+.farmer-shop-item[data-farmer="1"],
+.farmer-shop-item[data-farmer="2"],
+.farmer-shop-item[data-farmer="3"],
+.farmer-shop-item[data-farmer="4"],
+.farmer-shop-item[data-farmer="5"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            #66bb6a,
+            #2e7d32
+        );
+
+    border-color: #8eea92;
+
+    box-shadow:
+        0 5px 0 #1b5e20,
+        inset 0 2px 0 rgba(255,255,255,0.3);
+}
+
+
+/* =========================
+   TAP POWER = RED
+========================= */
+
+.farmer-shop-item[data-power="2"],
+.farmer-shop-item[data-power="3"],
+.farmer-shop-item[data-power="4"],
+.farmer-shop-item[data-power="5"],
+.farmer-shop-item[data-power="6"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ef5350,
+            #b71c1c
+        );
+
+    border-color: #ff8a80;
+
+    box-shadow:
+        0 5px 0 #7f0000,
+        inset 0 2px 0 rgba(255,255,255,0.3);
+}
+
+
+/* =========================
+   ENERGY = BLUE
+========================= */
+
+.farmer-shop-item[data-energy="1"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            #42a5f5,
+            #1565c0
+        );
+
+    border-color: #90caf9;
+
+    box-shadow:
+        0 5px 0 #0d47a1,
+        inset 0 2px 0 rgba(255,255,255,0.3);
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.farmer-shop-item:hover {
+
+    filter: brightness(1.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 0 rgba(0,0,0,0.25),
+        inset 0 2px 0 rgba(255,255,255,0.35);
+}
+
+
+/* =========================
+   PRESS
+========================= */
+
+.farmer-shop-item:active {
+
+    transform: translateY(3px);
+
+    box-shadow:
+        0 2px 0 rgba(0,0,0,0.25),
+        inset 0 2px 0 rgba(255,255,255,0.2);
+}
+
+/* =========================
+   GEM SHOP 3D EFFECT
+========================= */
+
+.gem-shop-item {
+    transition:
+        transform 0.12s ease,
+        filter 0.12s ease,
+        box-shadow 0.12s ease;
+
+    box-shadow:
+        0 5px 0 rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+/* PURCHASE BUTTON */
+
+.gem-shop-action {
+    transition:
+        transform 0.1s ease,
+        filter 0.1s ease,
+        box-shadow 0.1s ease;
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+/* HOVER */
+
+.gem-shop-action:hover {
+    filter: brightness(1.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 0 rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+/* PRESS */
+
+.gem-shop-action:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15);
+
+    filter: brightness(0.95);
+}
+
+#luckyAnnouncement {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.5);
+
+    background: linear-gradient(135deg, #ffd700, #ff9d00);
+
+    color: white;
+
+    padding: 18px 30px;
+
+    border-radius: 20px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    text-align: center;
+    white-space: nowrap;
+
+    border: 3px solid #fff3a0;
+
+    box-shadow:
+        0 7px 0 #c77b00,
+        0 12px 25px rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 2147483647;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+#luckyAnnouncement.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+/* =========================
+   SHOP BACK BUTTONS
+========================= */
+
+#backToShop,
+#backFromGemsShop {
+    position: relative;
+
+    padding: 12px 28px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        180deg,
+        #b96de0 0%,
+        #8d45b8 100%
+    );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 0 #5f2d7c,
+        0 8px 12px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease;
+}
+
+
+/* HOVER */
+
+#backToShop:hover,
+#backFromGemsShop:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 0 #5f2d7c,
+        0 10px 14px rgba(0, 0, 0, 0.35);
+}
+
+
+/* PRESSED */
+
+#backToShop:active,
+#backFromGemsShop:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #5f2d7c,
+        0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   GEMS SHOP SCROLL
+========================================================= */
+
+#gemsShop .gems-shop-scroll {
+    position: absolute !important;
+
+    top: 80px !important;
+    left: 20px !important;
+
+    width: calc(100% - 40px) !important;
+    height: calc(100% - 100px) !important;
+
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+
+    padding: 10px 5px 80px !important;
+
+    box-sizing: border-box !important;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   BACK BUTTON = PART OF SCROLL CONTENT
+========================================================= */
+
+#gemsShop .gems-back-wrapper {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    margin-top: 30px !important;
+    padding-bottom: 30px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* Override ALL old positioning */
+
+#gemsShop #backFromGemsShop {
+    position: relative !important;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    margin: 0 !important;
+
+    transform: none !important;
+
+    flex-shrink: 0 !important;
+}
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.bottomNav {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 85px);
+
+    grid-template-rows: repeat(2, 65px);
+
+    gap: 8px;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   ALL 6 BUTTONS
+========================================================= */
+
+.bottomNav > button {
+
+    width: 85px;
+    height: 65px;
+
+    min-width: 85px;
+    max-width: 85px;
+
+    padding: 6px 4px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.bottomNav > button span {
+
+    display: block;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.bottomNav > button small {
+
+    display: block;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   BUTTON POSITIONS
+========================================================= */
+
+/* ROW 1 */
+
+#shopButton {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#leaderboardButton {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#questsButton {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#statsButton {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* ROW 2 */
+
+#moreButton {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#achievementsButton {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* =========================================================
+   CASE OPENING
+========================================================= */
+
+#caseOpeningSection {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.case-title {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   CASE WINDOW
+========================================================= */
+
+.case-window {
+
+    position: relative;
+
+    width: 95%;
+
+    max-width: 600px;
+
+    height: 105px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 3px solid rgba(255,255,255,0.25);
+
+    background: rgba(0,0,0,0.45);
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   CENTER POINTER
+========================================================= */
+
+.case-pointer {
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 50%;
+
+    width: 3px;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    z-index: 20;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.9);
+
+}
+
+
+/* TRIANGLE POINTER */
+
+.case-pointer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 8px solid transparent;
+
+    border-right: 8px solid transparent;
+
+    border-top: 12px solid white;
+
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.case-track {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    will-change: transform;
+
+}
+
+
+/* =========================================================
+   REWARD CARD
+========================================================= */
+
+.case-reward {
+
+    width: 90px;
+
+    min-width: 90px;
+
+    height: 82px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.10);
+
+    border: 2px solid rgba(255,255,255,0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    user-select: none;
+
+}
+
+
+/* ICON */
+
+.case-reward-icon {
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    margin-bottom: 6px;
+
+}
+
+
+/* TEXT */
+
+.case-reward-text {
+
+    font-size: 12px;
+
+    line-height: 1.1;
+
+}
+
+
+/* =========================================================
+   SPINS
+========================================================= */
+
+.case-spins {
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-case-button {
+
+    margin-top: 10px;
+
+    width: 190px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* DISABLED */
+
+.open-case-button:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.case-result {
+
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+/* =========================================================
+   DAILY CASE OVERLAY
+========================================================= */
+
+.case-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none !important;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    z-index: 99999;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHOW ONLY WHEN ACTIVE
+========================================================= */
+
+.case-overlay.active {
+
+    display: flex !important;
+
+}
+
+
+/* =========================================================
+   CASE POPUP
+========================================================= */
+
+.case-popup {
+
+    position: relative;
+
+    width: 95%;
+
+    max-width: 600px;
+
+    padding: 25px 15px 20px;
+
+    border-radius: 18px;
+
+    background: #181818;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.case-close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 10px;
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.case-title {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   CASE WINDOW
+========================================================= */
+
+.case-window {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 105px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 3px solid rgba(255,255,255,0.25);
+
+    background: rgba(0,0,0,0.45);
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   POINTER
+========================================================= */
+
+.case-pointer {
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 50%;
+
+    width: 3px;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    z-index: 20;
+
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.case-track {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    will-change: transform;
+
+}
+
+
+/* =========================================================
+   REWARD CARD
+========================================================= */
+
+.case-reward {
+
+    width: 90px;
+
+    min-width: 90px;
+
+    height: 82px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.10);
+
+    border: 2px solid rgba(255,255,255,0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    user-select: none;
+
+    box-sizing: border-box;
+
+}
+
+
+.case-reward-icon {
+
+    font-size: 27px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.case-reward-text {
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   SPINS
+========================================================= */
+
+.case-spins {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-case-button {
+
+    display: block;
+
+    width: 190px;
+
+    height: 50px;
+
+    margin: 12px auto 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.open-case-button:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.case-result {
+
+    min-height: 30px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+/* =========================
+   DAILY CASE 3D BUTTON
+========================= */
+
+.bottomNav #dailyCaseButton {
+
+    background: linear-gradient(
+        to bottom,
+        #ff4a4a 0%,
+        #e52b2b 55%,
+        #b81414 100%
+    );
+
+    border: 2px solid #ff6b6b;
+
+    border-bottom: 5px solid #7f0d0d;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 0 #650909,
+        0 7px 12px rgba(0, 0, 0, 0.45),
+        inset 0 2px 2px rgba(255,255,255,0.35);
+
+    color: white;
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.08s,
+        box-shadow 0.08s;
+}
+
+
+/* HOVER */
+
+.bottomNav #dailyCaseButton:hover {
+
+    background: linear-gradient(
+        to bottom,
+        #ff5c5c 0%,
+        #ed3030 55%,
+        #c71919 100%
+    );
+
+}
+
+
+/* CLICK / PRESSED */
+
+.bottomNav #dailyCaseButton:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #650909,
+        0 2px 5px rgba(0,0,0,0.35),
+        inset 0 2px 3px rgba(0,0,0,0.25);
+
+}
+
+/* =========================================================
+   BOTTOM NAV — 3D + GLOW
+========================================================= */
+
+.bottomNav button {
+
+    position: relative;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border-bottom: 4px solid rgba(0, 0, 0, 0.45);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.35),
+        0 0 10px rgba(255, 255, 255, 0.18),
+        inset 0 2px 3px rgba(255, 255, 255, 0.20);
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        filter 0.1s ease;
+
+}
+
+
+/* =========================================================
+   GLOW ON HOVER
+========================================================= */
+
+.bottomNav button:hover {
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.35),
+        0 0 16px rgba(255, 255, 255, 0.35),
+        inset 0 2px 4px rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* =========================================================
+   PRESSED
+========================================================= */
+
+.bottomNav button:active {
+
+    transform: translateY(4px) !important;
+
+    filter: brightness(0.95);
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(255, 255, 255, 0.25),
+        inset 0 3px 5px rgba(0, 0, 0, 0.30) !important;
+
+}
+
+
+/* =========================================================
+   ICON PRESS
+========================================================= */
+
+.bottomNav button span {
+
+    transition:
+        transform 0.1s ease,
+        filter 0.1s ease;
+
+}
+
+
+.bottomNav button:active span {
+
+    transform: translateY(2px) scale(0.96) !important;
+
+}
+
+/* =========================================================
+   MILESTONES BUTTON — PINK
+========================================================= */
+
+.bottomNav #milestonesButton {
+
+    background: linear-gradient(
+        to bottom,
+        #ff6fbb 0%,
+        #e83d91 55%,
+        #b71d69 100%
+    );
+
+    border-bottom-color: #7d1246;
+
+    box-shadow:
+        0 4px 0 #7d1246,
+        0 0 12px rgba(255, 70, 170, 0.55),
+        inset 0 2px 3px rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* PINK GLOW */
+
+.bottomNav #milestonesButton:hover {
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 4px 0 #7d1246,
+        0 0 22px rgba(255, 70, 170, 0.85),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+
+}
+
+/* =========================================================
+   MILESTONES OVERLAY
+========================================================= */
+
+.milestones-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.75);
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   MILESTONES LAYOUT
+========================================================= */
+
+.milestones-layout {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 600px;
+
+}
+
+
+/* =========================================================
+   MILESTONES PNG CONTAINER
+========================================================= */
+
+.milestones-container {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 500px;
+
+}
+
+
+/* =========================================================
+   PNG
+========================================================= */
+
+.milestones-image {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+#closeMilestones {
+    position: absolute;
+
+    top: 30px;
+    right: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: transparent;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    z-index: 10000;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================
+   MILESTONE PROGRESS
+========================================================= */
+
+#milestoneProgress {
+
+    position: absolute;
+
+    /*
+       CHANGE THESE TWO VALUES
+       to move it around on the PNG.
+    */
+
+    left: 35%;
+
+    top: 55%;
+
+    transform: translateY(-50%);
+
+    width: 70px;
+
+    height: 75%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   REWARD TEXT
+========================================================= */
+
+.milestone-reward {
+    position: absolute;
+
+    left: 30px; /* moves text to the right of the bar */
+
+    width: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+
+    color: white;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,0.9);
+}
+
+
+/* TOP REWARD */
+
+.milestone-reward-top {
+    top: 30px;
+}
+
+
+/* BOTTOM REWARD */
+
+.milestone-reward-bottom {
+    bottom: 20px;
+}
+
+
+.milestone-reward b {
+
+    font-size: 40px;
+
+    line-height: 1.1;
+
+}
+
+
+.milestone-reward span {
+
+    margin-top: 2px;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    color: #ffd84d;
+
+}
+
+/* =========================================================
+   BAR
+========================================================= */
+
+.milestone-bar-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 1;
+
+}
+
+
+.milestone-bar {
+
+    position: relative;
+
+    width: 20px;
+
+    height: 180px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.55);
+
+    border: 2px solid rgba(255,215,80,0.45);
+
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,0.8),
+        0 2px 6px rgba(0,0,0,0.5);
+
+}
+
+
+.milestone-bar-fill {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 0%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to top,
+            #c88b20,
+            #ffd84d
+        );
+
+    transition: height 0.5s ease;
+
+}
+
+
+/* =========================================================
+   PROGRESS TEXT
+========================================================= */
+
+.milestone-reward {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,0.9);
+
+}
+
+
+.milestone-reward b {
+
+    font-size: 9px;
+
+    line-height: 1.1;
+
+}
+
+
+.milestone-reward span {
+
+    margin-top: 2px;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    color: #ffd84d;
+
+}
+
+
+.milestone-progress-text {
+
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    color: white;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,0.9);
+
+}
+
+/* =========================================================
+   FALLING BONUS TOKEN
+========================================================= */
+
+.falling-token {
+
+    position: fixed;
+
+    top: -70px;
+
+    width: 55px;
+    height: 55px;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    animation:
+        tokenFall 10s linear forwards,
+        tokenSpin 1.5s linear infinite;
+
+}
+
+
+/* =========================================================
+   FALL DOWN SCREEN
+========================================================= */
+
+@keyframes tokenFall {
+
+    from {
+        top: -70px;
+    }
+
+    to {
+        top: calc(100vh + 70px);
+    }
+
+}
+
+
+/* =========================================================
+   SPIN
+========================================================= */
+
+@keyframes tokenSpin {
+
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.15);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   CLICK POPUP
+========================================================= */
+
+.token-reward-popup {
+
+    position: fixed;
+
+    z-index: 1000000;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    color: #ffd84d;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,0.8);
+
+    animation:
+        tokenReward 1s ease-out forwards;
+
+}
+
+
+/* =========================================================
+   REWARD ANIMATION
+========================================================= */
+
+@keyframes tokenReward {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.5);
+    }
+
+    30% {
+        opacity: 1;
+
+        transform:
+            translateY(-15px)
+            scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-60px)
+            scale(1);
+    }
+
+}
+
+/* =========================
+   TOKENS SHOP BUTTON
+========================= */
+
+#tokensShopButton {
+    position: absolute;
+
+    left: 18%;
+    top: 50%;
+
+    z-index: 10;
+}
+
+/* =========================
+   TOKENS SHOP
+========================= */
+
+#tokensShop {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 20;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   TOKENS SHOP CONTENT
+========================= */
+
+.tokens-shop-scroll {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+    padding-top: 170px;
+}
+
+
+/* =========================
+   TOKENS SHOP TITLE
+========================= */
+
+#tokensShop h2 {
+    margin-top: 20px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* =========================
+   TOKEN ITEM
+========================= */
+
+.token-shop-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 7px 10px;
+
+    margin-top: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(0,0,0,0.35);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.token-shop-icon {
+    font-size: 24px;
+
+    margin-right: 8px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.token-shop-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+/* =========================
+   TOKEN BUY BUTTON
+========================= */
+
+.token-shop-action {
+    position: relative;
+
+    width: 85px;
+    height: 42px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        #a855f7,
+        #7e22ce
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #4c1d95,
+        0 7px 10px rgba(0, 0, 0, 0.4);
+
+    text-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.5);
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+
+/* =========================
+   HOVER — LIFT UP
+========================= */
+
+.token-shop-action:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #4c1d95,
+        0 11px 14px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   PRESS — PUSH DOWN
+========================= */
+
+.token-shop-action:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #4c1d95,
+        0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+#backFromTokensShop {
+    margin-top: 20px;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#tokensShop {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+#tokensShop.hidden {
+    display: none !important;
+}
+
+/* =========================
+   SHOP BACK BUTTON
+========================= */
+
+.shop-back-button {
+    position: relative;
+
+    width: 150px;
+    height: 45px;
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        #a855f7,
+        #7e22ce
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #4c1d95,
+        0 7px 10px rgba(0, 0, 0, 0.4);
+
+    text-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.5);
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.shop-back-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #4c1d95,
+        0 11px 14px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   PRESS DOWN
+========================= */
+
+.shop-back-button:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #4c1d95,
+        0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   FIELD NAV
+========================= */
+
+.fieldNav {
+    max-width: 720px;
+
+    margin: 5px auto 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 0 5px;
+}
+
+
+/* =========================
+   FIELD BUTTON
+========================= */
+
+#fieldButton {
+
+    /* SAME WIDTH AS ONE BOTTOM NAV BUTTON */
+    grid-column: 1;
+
+    width: 100%;
+    height: 75px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 5px 0 #071f3d;
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease;
+}
+
+/* =========================================================
+   NIGHT SHOP BUTTON
+========================================================= */
+
+#nightShopButton {
+
+    grid-column: 4;
+
+    width: 100%;
+    height: 75px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.45);
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        #252525,
+        #050505
+    );
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 5px 0 #000,
+        0 0 12px rgba(255,255,255,.15);
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        filter 0.15s ease;
+}
+
+
+/* =========================================================
+   NIGHT SHOP HOVER
+========================================================= */
+
+#nightShopButton:hover {
+
+    filter: brightness(1.25);
+
+    box-shadow:
+        0 5px 0 #000,
+        0 0 18px rgba(255,255,255,.3);
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+#nightShopButton .bigIcon {
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+#nightShopButton b {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+#nightShopButton small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   PRESS EFFECT
+========================================================= */
+
+#nightShopButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 0 0 #000,
+        0 0 10px rgba(255,255,255,.2);
+
+}
+
+/* =========================
+   FIELD ICON
+========================= */
+
+#fieldButton .bigIcon {
+    font-size: 32px;
+}
+
+
+/* =========================
+   FIELD TEXT
+========================= */
+
+#fieldButton > span:last-child {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#fieldButton b {
+    display: block;
+
+    font-size: 18px;
+}
+
+#fieldButton small {
+    display: block;
+
+    font-size: 11px;
+
+    opacity: .8;
+}
+
+
+/* =========================
+   FIELD HOVER
+========================= */
+
+#fieldButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #071f3d,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 18px rgba(30,120,220,.7);
+}
+
+
+/* =========================
+   FIELD PRESS
+========================= */
+
+#fieldButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #071f3d;
+}
+
+/* =========================================================
+   FIELD OVERLAY
+========================================================= */
+#fieldOverlay {
+    display: none !important;
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #07111f !important;
+
+    z-index: 2147483647 !important;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   FIELD BACKGROUND
+========================================================= */
+
+#fieldBackground {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   CLICKER FARM LOGO
+========================================================= */
+
+#fieldLogo {
+    position: absolute !important;
+
+    top: 10px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 170px !important;
+    height: auto !important;
+
+    z-index: 10 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   RETURN BUTTON
+========================================================= */
+
+#fieldReturnButton {
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 30px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 180px !important;
+    height: 55px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 2147483647 !important;
+
+    border: 3px solid rgba(0,0,0,.35) !important;
+
+    border-radius: 16px !important;
+
+    color: white !important;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    ) !important;
+
+    font-size: 16px !important;
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    transition:
+    transform .08s ease,
+    box-shadow .15s ease !important;
+
+    pointer-events: auto !important;
+
+    box-shadow:
+        0 5px 0 #071f3d,
+        0 0 12px rgba(30,120,220,.5) !important;
+}
+
+/* =========================================================
+   FIELD MENU
+========================================================= */
+
+#fieldMenu {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    z-index: 999999999;
+
+}
+
+
+/* =========================================================
+   FIELD MENU COLUMNS
+========================================================= */
+
+.fieldMenuColumn {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   FIELD MENU BUTTON BASE
+========================================================= */
+
+.fieldMenuButton {
+
+    width: 150px;
+
+    height: 55px;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.fieldMenuIcon {
+
+    font-size: 23px;
+
+}
+
+
+/* =========================================================
+   SEEDS
+========================================================= */
+
+.fieldSeedsButton {
+
+    background: linear-gradient(
+        #9e285d,
+        #661536
+    );
+
+    box-shadow:
+        0 5px 0 #420d25,
+        0 0 12px rgba(220,60,130,.55);
+
+}
+
+
+/* =========================================================
+   MARKET
+========================================================= */
+
+.fieldMarketButton {
+
+    background: linear-gradient(
+        #72c94f,
+        #3f8c2b
+    );
+
+    box-shadow:
+        0 5px 0 #28631b,
+        0 0 12px rgba(110,220,70,.55);
+
+}
+
+
+/* =========================================================
+   SEEDS UPGRADES
+========================================================= */
+
+.fieldSeedsUpgradesButton {
+
+    background: linear-gradient(
+        #8a6036,
+        #50351f
+    );
+
+    box-shadow:
+        0 5px 0 #352214,
+        0 0 12px rgba(170,110,55,.55);
+
+}
+
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+.fieldInventoryButton {
+
+    background: linear-gradient(
+        #a83232,
+        #641c1c
+    );
+
+    box-shadow:
+        0 5px 0 #461313,
+        0 0 12px rgba(220,55,55,.55);
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.fieldMenuButton:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* SEEDS HOVER */
+
+.fieldSeedsButton:hover {
+
+    box-shadow:
+        0 8px 0 #420d25,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(240,70,145,.85);
+
+}
+
+
+/* MARKET HOVER */
+
+.fieldMarketButton:hover {
+
+    box-shadow:
+        0 8px 0 #28631b,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(120,240,80,.85);
+
+}
+
+
+/* SEEDS UPGRADES HOVER */
+
+.fieldSeedsUpgradesButton:hover {
+
+    box-shadow:
+        0 8px 0 #352214,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(190,125,65,.85);
+
+}
+
+
+/* INVENTORY HOVER */
+
+.fieldInventoryButton:hover {
+
+    box-shadow:
+        0 8px 0 #461313,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(240,60,60,.85);
+
+}
+
+
+/* =========================================================
+   PRESS DOWN
+========================================================= */
+
+.fieldMenuButton:active {
+
+    transform: translateY(5px);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #fieldMenu {
+
+        gap: 5px;
+
+        bottom: 20px;
+
+    }
+
+
+    .fieldMenuColumn {
+
+        gap: 7px;
+
+    }
+
+
+    .fieldMenuButton {
+
+        width: 105px;
+
+        height: 50px;
+
+        font-size: 11px;
+
+        gap: 4px;
+
+    }
+
+
+    .fieldMenuIcon {
+
+        font-size: 18px;
+
+    }
+
+
+    #fieldReturnButton {
+
+        width: 120px !important;
+
+        height: 50px !important;
+
+        font-size: 12px !important;
+
+    }
+
+}
+
+/* LEFT COLUMN */
+.fieldMenuColumn:first-child {
+    transform: translateX(-80px);
+}
+
+/* RIGHT COLUMN */
+.fieldMenuColumn:last-child {
+    transform: translateX(80px);
+}
+
+/* =========================================================
+   MARKET WINDOW
+========================================================= */
+
+#marketWindow {
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 500px;
+
+    z-index: 99999999999;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #07111f;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.6),
+        0 0 25px rgba(30,120,220,.45);
+}
+
+
+/* =========================================================
+   MARKET IMAGE
+========================================================= */
+
+#marketImage {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+#marketCloseButton {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   CLOSE HOVER
+========================================================= */
+
+#marketCloseButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 0 #071f3d,
+        0 10px 14px rgba(0,0,0,.45),
+        0 0 18px rgba(30,120,220,.8);
+}
+
+
+/* =========================================================
+   CLOSE PRESS
+========================================================= */
+
+#marketCloseButton:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 #071f3d;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #marketWindow {
+        width: 92%;
+    }
+
+    #marketCloseButton {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================================
+   MARKET ITEMS
+========================================================= */
+
+#marketItems {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 85%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SEED BUTTON
+========================================================= */
+
+.marketSeedButton {
+
+    width: 80%;
+    height: 65px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    border-radius: 16px;
+
+    color: white;
+
+    background: linear-gradient(
+        #174b86,
+        #0b2d57
+    );
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 0 #071f3d,
+        0 0 12px rgba(30,120,220,.5);
+
+    transition:
+        transform .08s ease,
+        box-shadow .08s ease;
+
+         margin-left: 40px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.marketSeedIcon {
+
+    font-size: 30px;
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.marketSeedInfo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.marketSeedInfo b {
+
+    font-size: 17px;
+
+}
+
+
+.marketSeedInfo small {
+
+    font-size: 12px;
+
+    opacity: .85;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.marketSeedButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #071f3d,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(30,120,220,.85);
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.marketSeedButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #071f3d;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #marketItems {
+
+        width: 82%;
+
+        gap: 8px;
+
+    }
+
+
+    .marketSeedButton {
+
+        height: 55px;
+
+    }
+
+
+    .marketSeedIcon {
+
+        font-size: 25px;
+
+    }
+
+
+    .marketSeedInfo b {
+
+        font-size: 14px;
+
+    }
+
+
+    .marketSeedInfo small {
+
+        font-size: 10px;
+
+    }
+
+}
+
+/* =========================================================
+   SEED ITEMS - LIGHT GREEN
+========================================================= */
+
+.marketSeedButton {
+    background: linear-gradient(
+        #72c94f,
+        #3f8c2b
+    );
+
+    box-shadow:
+        0 5px 0 #28631b,
+        0 0 12px rgba(110,220,70,.55);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.marketSeedButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 0 #28631b,
+        0 11px 14px rgba(0,0,0,.45),
+        0 0 20px rgba(120,240,80,.85);
+}
+
+
+/* =========================================================
+   PRESS DOWN
+========================================================= */
+
+.marketSeedButton:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #28631b;
+}
+
+/* =========================================================
+   FIELD COINS
+========================================================= */
+
+#fieldCoins {
+    position: absolute;
+
+    top: 85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        #a66a35,
+        #633719
+    );
+
+    border: 3px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.12);
+
+    box-sizing: border-box;
+
+    padding: 6px 12px;
+
+    min-width: 120px;
+
+    color: white;
+
+    pointer-events: none;
+}
+
+#fieldCoins img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+#fieldMoney {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+#fieldCoins span {
+    display: block;
+
+    font-size: 9px;
+
+    opacity: .8;
+}
+
+/* =========================================================
+   FIELD PLOTS
+========================================================= */
+
+#fieldPlots {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90vw, 630px);
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+
+    gap: 4px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   PLOT
+========================================================= */
+
+.fieldPlot {
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+
+    border: 2px solid rgba(255,255,255,.12);
+    border-radius: 5px;
+
+    background: rgba(0,0,0,.55);
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* LOCK */
+
+.fieldPlot span {
+
+    font-size: clamp(12px, 2.5vw, 22px);
+
+    line-height: 1;
+}
+
+
+/* COST */
+
+.fieldPlot small {
+
+    margin-top: 3px;
+
+    font-size: clamp(7px, 1.4vw, 12px);
+
+    font-weight: bold;
+
+    color: white;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.fieldPlot.locked:hover {
+
+    transform: scale(1.04);
+
+    background: rgba(0,0,0,.7);
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.15);
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.fieldPlot:active {
+
+    transform: scale(.96);
+}
+
+
+/* =========================================================
+   UNLOCKED
+========================================================= */
+
+.fieldPlot.unlocked {
+    background: rgba(0,0,0,.35);
+    border-color: rgba(255,255,255,.08);
+    cursor: pointer;
+}
+
+
+/* SHOW CROP / EMPTY ICON */
+
+.fieldPlot.unlocked span {
+    display: block;
+}
+
+/* =========================================================
+   INVENTORY POPUP
+========================================================= */
+
+#inventoryPopup {
+
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(
+        90vw,
+        420px
+    );
+
+    height: auto;
+
+    z-index: 999999999;
+
+}
+
+
+/* =========================================================
+   INVENTORY IMAGE
+========================================================= */
+
+#inventoryBackground {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#closeInventoryButton {
+
+    position: absolute;
+
+    top: 3%;
+
+    right: 3%;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    color: transparent;
+
+    box-shadow: none;
+
+}
+
+/* =========================================================
+   INVENTORY ITEMS
+========================================================= */
+
+#inventoryItems {
+
+    position: absolute;
+
+    top: 28%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   INVENTORY ITEM
+========================================================= */
+
+.inventoryItem {
+
+    width: 100%;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 12px;
+
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    border: 2px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 12px;
+
+    color: white;
+
+    box-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ICON */
+
+.inventoryItem > span {
+
+    font-size: 35px;
+
+}
+
+
+/* TEXT */
+
+.inventoryItem div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.inventoryItem b {
+
+    font-size: 16px;
+
+}
+
+
+.inventoryItem small {
+
+    font-size: 14px;
+
+    opacity: 0.85;
+
+}
+
+
+.inventoryItem small::before {
+
+    content: "x ";
+
+}
+
+/* =========================================================
+   INVENTORY ITEMS SCROLL
+========================================================= */
+
+#inventoryItems {
+
+    position: absolute;
+
+    top: 28%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+
+
+    /* SCROLL AREA */
+
+    height: 58%;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+
+    /* ITEMS */
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+
+
+    /* PREVENT CONTENT FROM TOUCHING EDGE */
+
+    padding-right: 8px;
+
+    box-sizing: border-box;
+
+
+    /* SCROLLBAR - FIREFOX */
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255,255,255,.55)
+        rgba(0,0,0,.25);
+
+}
+
+/* =========================================================
+   INVENTORY SCROLLBAR
+========================================================= */
+
+#inventoryItems::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+#inventoryItems::-webkit-scrollbar-track {
+
+    background:
+        rgba(0,0,0,.25);
+
+    border-radius:
+        10px;
+
+}
+
+
+#inventoryItems::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius:
+        10px;
+
+}
+
+
+#inventoryItems::-webkit-scrollbar-thumb:hover {
+
+    background:
+        rgba(255,255,255,.8);
+
+}
+
+/* =========================================================
+   FARM REWARD POPUP
+========================================================= */
+
+.farmRewardPopup {
+
+    position: fixed;
+
+    transform:
+        translate(-50%, 0);
+
+    z-index:
+        999999999;
+
+    pointer-events:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        18px;
+
+    font-weight:
+        bold;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.8);
+
+    animation:
+        farmRewardFloat 1s ease-out
+        forwards;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* =========================================================
+   FLOAT ANIMATION
+========================================================= */
+
+@keyframes farmRewardFloat {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 10px)
+            scale(.8);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -60px)
+            scale(1.1);
+
+    }
+
+}
+
+/* =========================================================
+   SEEDS BUTTON
+========================================================= */
+
+#seedsButton {
+
+    position: absolute;
+
+    bottom: 5%;
+
+    right: 5%;
+
+    width: 120px;
+
+    height: 55px;
+
+    border: 2px solid rgba(255,255,255,.15);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0,0,0,.55);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,.35),
+        0 0 10px rgba(255,255,255,.12);
+
+    z-index: 100;
+
+    transition:
+        transform .08s ease,
+        background .15s ease;
+}
+
+
+/* HOVER */
+
+#seedsButton:hover {
+
+    background:
+        rgba(0,0,0,.7);
+
+}
+
+
+/* PRESS */
+
+#seedsButton:active {
+
+    transform:
+        translateY(4px);
+
+    box-shadow:
+        0 0 0 rgba(0,0,0,0);
+
+}
+
+/* =========================================================
+   SEEDS POPUP
+========================================================= */
+
+#seedsPopup {
+
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width:
+        min(90vw, 420px);
+
+    z-index:
+        999999999;
+
+}
+
+
+/* =========================================================
+   SEEDS IMAGE
+========================================================= */
+
+#seedsBackground {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+#closeSeedsButton {
+
+    position: absolute;
+
+    top: 3%;
+
+    right: 3%;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+/* =========================================================
+   SEED UPGRADES
+========================================================= */
+
+#seedUpgrades {
+
+    position: absolute;
+
+    top: 35%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 72%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   UPGRADE BUTTON
+========================================================= */
+
+.seedUpgrade {
+
+    width: 100%;
+
+    min-height: 65px;
+
+    padding: 8px 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: 2px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 12px;
+
+     background: rgba(0, 0, 0, 0.28);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,.3);
+
+    transition:
+        transform .08s ease,
+        background .15s ease;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.seedUpgrade > span {
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.seedUpgradeText {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.seedUpgradeText b {
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+.seedUpgradeText small {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    opacity: .8;
+
+}
+
+
+/* =========================================================
+   COST
+========================================================= */
+
+.seedUpgrade strong {
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.seedUpgrade:active {
+
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        0 1px 0 rgba(0,0,0,.3);
+
+}
+
+
+/* =========================================================
+   MAXED
+========================================================= */
+
+.seedUpgrade.maxed {
+
+    opacity: .55;
+
+    cursor: default;
+
+}
+
+/* =========================================================
+   SEED UPGRADE HOVER
+========================================================= */
+
+.seedUpgrade:hover {
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    transform:
+        scale(1.03);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.3),
+        0 0 12px rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   SEED UPGRADE PRESS
+========================================================= */
+
+.seedUpgrade:active {
+
+    transform:
+        scale(0.97);
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.3);
+
+}
+
+/* =========================================================
+   INVENTORY ITEM HOVER
+========================================================= */
+
+.inventoryItem {
+
+    cursor: pointer;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.inventoryItem:hover {
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    transform:
+        scale(1.03);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.inventoryItem:active {
+
+    transform:
+        scale(0.97);
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.inventoryItem {
+    background: rgba(90, 20, 20, 0.75);
+
+    border: 2px solid rgba(120, 30, 30, 0.8);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 0 rgba(40, 5, 5, 0.7);
+
+    color: white;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   SEED UPGRADES
+========================================================= */
+
+.seedUpgrade {
+
+    background: rgba(20, 90, 45, 0.75);
+
+    border: 2px solid rgba(40, 130, 65, 0.8);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 0 rgba(5, 40, 15, 0.7);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.seedUpgrade:hover {
+
+    background: rgba(30, 115, 55, 0.85);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 4px 0 rgba(5, 40, 15, 0.7),
+        0 0 12px rgba(50, 180, 80, 0.35);
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.seedUpgrade:active {
+
+    transform: scale(0.97);
+
+    box-shadow:
+        0 1px 0 rgba(5, 40, 15, 0.7);
+
+}
+
+/* =========================================================
+   RETURN BUTTON
+========================================================= */
+
+#fieldReturnButton {
+
+    cursor: pointer;
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+#fieldReturnButton:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+#fieldReturnButton:active {
+
+    transform: scale(0.97);
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.25); 
+
+}
+
+/* =========================================================
+   RETURN BUTTON HOVER
+========================================================= */
+
+#fieldReturnButton:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.03) !important;
+
+    box-shadow:
+        0 5px 0 #071f3d,
+        0 0 18px rgba(30,120,220,.75) !important;
+
+}
+
+
+/* =========================================================
+   RETURN BUTTON PRESS
+========================================================= */
+
+#fieldReturnButton:active {
+
+    transform:
+        translateX(-50%)
+        scale(.97) !important;
+
+    box-shadow:
+        0 2px 0 #071f3d,
+        0 0 8px rgba(30,120,220,.4) !important;
+
+}
+
+/* =========================================================
+   SEEDS UPGRADES POPUP
+========================================================= */
+
+#seedsUpgradesPopup {
+
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(90vw, 420px);
+
+    z-index: 999999999;
+
+}
+
+
+/* =========================================================
+   SEEDS UPGRADES IMAGE
+========================================================= */
+
+#seedsUpgradesBackground {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#closeSeedsUpgradesButton {
+
+    position: absolute;
+
+    top: 3%;
+    right: 3%;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    color: transparent;
+
+    box-shadow: none;
+
+}
+
+/* =========================================================
+   SEED SOUP UPGRADES
+========================================================= */
+
+#seedUpgradeItems {
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 82%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   UPGRADE ITEM
+========================================================= */
+
+.seedUpgrade {
+
+    width: 100%;
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 10px;
+
+    box-sizing: border-box;
+
+    background: rgba(20, 90, 45, 0.75);
+
+    border: 2px solid rgba(40, 130, 65, 0.8);
+
+    border-radius: 12px;
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 0 rgba(5, 40, 15, 0.7);
+
+    transition:
+        transform .08s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.seedUpgradeIcon {
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.seedUpgradeText {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+    gap: 3px;
+}
+
+
+.seedUpgradeText b {
+
+    font-size: 15px;
+}
+
+
+.seedUpgradeText small {
+
+    font-size: 10px;
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   COST
+========================================================= */
+
+.seedUpgradeCost {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.seedUpgrade:hover {
+
+    background: rgba(30, 115, 55, 0.85);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 4px 0 rgba(5, 40, 15, 0.7),
+        0 0 12px rgba(50, 180, 80, 0.35);
+}
+
+
+/* =========================================================
+   PRESS
+========================================================= */
+
+.seedUpgrade:active {
+
+    transform: scale(.97);
+
+    box-shadow:
+        0 1px 0 rgba(5, 40, 15, 0.7);
+}
+
+/* =========================================================
+   DAY / NIGHT OVERLAY
+========================================================= */
+
+#dayNightOverlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 30, 0);
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    transition:
+        background 2s linear;
+}
+
+/* =========================================================
+   FIELD + NIGHT SHOP ROW
+========================================================= */
+
+.fieldNightRow {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 10px auto 12px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    padding: 0 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FIELD BUTTON
+========================================================= */
+
+.fieldButton {
+
+    width: 100%;
+    height: 75px;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,.3);
+
+    background: linear-gradient(
+        #55a84f,
+        #286b25
+    );
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.08s,
+        box-shadow 0.08s;
+}
+
+
+.fieldButton small,
+.nightShopButton small {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   FIELD PRESS EFFECT
+========================================================= */
+
+.fieldButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 0 0 rgba(0,0,0,0);
+}
+
+/* =========================================================
+   NIGHT SHOP BUTTON
+========================================================= */
+
+.nightShopButton {
+
+    width: 100%;
+    height: 75px;
+
+    border-radius: 16px;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,.3);
+
+    background: linear-gradient(
+        #3f568c,
+        #1b294d
+    );
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.08s,
+        box-shadow 0.08s;
+
+    /* HIDDEN DURING DAY */
+
+    display: none;
+}
+
+
+/* =========================================================
+   NIGHT SHOP PRESS EFFECT
+========================================================= */
+
+.nightShopButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 0 0 rgba(0,0,0,0);
+}
+
+
+/* =========================================================
+   NIGHT SHOP GLOW
+========================================================= */
+
+.nightShopButton {
+
+    animation:
+        nightShopGlow 2s infinite alternate;
+}
+
+
+@keyframes nightShopGlow {
+
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.25);
+    }
+
+}
+
+/* =========================================================
+   NIGHT SHOP OVERLAY
+========================================================= */
+
+#nightShopOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================================
+   NIGHT SHOP WINDOW
+========================================================= */
+
+#nightShopWindow {
+
+    position: relative;
+
+    width: min(90vw, 720px);
+
+    aspect-ratio: 1 / 1;
+
+}
+
+
+/* =========================================================
+   NIGHT SHOP PNG
+========================================================= */
+
+#nightShopImage {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#closeNightShop {
+
+    position: absolute;
+
+    top: 5%;
+
+    right: 15%;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform .08s ease,
+        background .15s ease;
+}
+
+
+#closeNightShop:hover {
+
+    background: transparent
+
+}
+
+
+#closeNightShop:active {
+
+    transform: translateY(4px);
+
+}
+
+/* =========================================================
+   NIGHT LILY DISPLAY
+========================================================= */
+
+#nightLilyDisplay {
+
+    position: absolute;
+
+    top: 2%;
+    left: 20%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 6px 12px;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,.75);
+
+    border: 2px solid rgba(255,255,255,.15);
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    z-index: 20;
+
+    box-sizing: border-box;
+
+}
+
+
+/* NIGHT LILY ICON */
+
+.nightLilyIcon {
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+
+/* AMOUNT */
+
+#nightLilyAmount {
+
+    min-width: 25px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   NIGHT SHOP TABS
+========================================================= */
+
+#nightShopTabs {
+
+    position: absolute;
+
+    top: 25%;
+
+    left: 15%;
+    right: 15%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    z-index: 20;
+}
+
+
+/* TAB */
+
+.nightShopTab {
+
+    width: 130px;
+
+    height: 42px;
+
+    border: 3px solid rgba(0,0,0,.45);
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        #333,
+        #111
+    );
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #000;
+
+    transition:
+        transform .08s ease,
+        filter .15s ease,
+        box-shadow .08s ease;
+}
+
+
+/* HOVER */
+
+.nightShopTab:hover {
+
+    filter: brightness(1.3);
+
+}
+
+
+/* ACTIVE TAB */
+
+.nightShopTab.active {
+
+    background: linear-gradient(
+        #555,
+        #222
+    );
+
+    box-shadow:
+        0 4px 0 #000,
+        0 0 12px rgba(255,255,255,.2);
+
+}
+
+
+/* PRESS */
+
+.nightShopTab:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 0 0 #000;
+
+}
+
+
+/* =========================================================
+   NIGHT SHOP PAGES
+========================================================= */
+
+.nightShopPage {
+
+    position: absolute;
+
+    top: 40%;
+
+    left: 15%;
+    right: 15%;
+
+    bottom: 12%;
+
+    z-index: 15;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CONVERSION PAGE
+========================================================= */
+
+.nightConvertTitle {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+.nightConvertDescription {
+
+    font-size: 11px;
+
+    opacity: .85;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   CONVERSION
+========================================================= */
+
+.nightConversion {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(0,0,0,.55);
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+}
+
+
+.conversionArrow {
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================================
+   CONVERT BUTTON
+========================================================= */
+
+#convertNightLilyButton {
+
+    margin-top: 20px;
+
+    width: 180px;
+
+    height: 50px;
+
+    border-radius: 14px;
+
+    border: 3px solid rgba(0,0,0,.45);
+
+    background: linear-gradient(
+        #444,
+        #111
+    );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #000,
+        0 0 12px rgba(255,255,255,.15);
+
+    transition:
+        transform .08s ease,
+        filter .15s ease,
+        box-shadow .08s ease;
+}
+
+
+#convertNightLilyButton:hover {
+
+    filter: brightness(1.3);
+
+}
+
+
+#convertNightLilyButton:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 0 0 #000;
+
+}
+
+
+/* =========================================================
+   NOT ENOUGH COINS
+========================================================= */
+
+#convertNightLilyButton.notEnough {
+
+    filter: brightness(.6);
+
+}
+
+/* =========================================================
+   MONEY SHOP
+========================================================= */
+
+.money-shop {
+    position: absolute;
+    top: 170px !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MONEY SHOP SCROLL AREA
+========================================================= */
+
+#moneyShop .gems-shop-scroll {
+    width: 100%;
+     height: calc(100% - 100px);
+
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+
+    padding-bottom: 100px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+#moneyShop .gems-shop-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+#moneyShop .gems-shop-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+}
+
+#moneyShop .gems-shop-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+#moneyShop .gems-back-wrapper {
+    position: relative;
+    left: 115px;
+    margin-bottom: 30px;
+}
+
+/* =========================================================
+   ACHIEVEMENT UNLOCKED NOTIFICATION
+========================================================= */
+
+#achievementNotification {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    width: 350px;
+    max-width: 90vw;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    padding: 12px 16px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #4a2b0d,
+        #211205
+    );
+
+    border: 3px solid #d9a441;
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 12px rgba(255, 190, 60, 0.7),
+        0 0 30px rgba(255, 170, 30, 0.4),
+        0 8px 25px rgba(0, 0, 0, 0.7);
+
+    z-index: 9999999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -150px);
+
+    pointer-events: none;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SHOW
+========================================================= */
+
+#achievementNotification.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.achievement-notification-icon {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    background: rgba(255, 190, 50, 0.15);
+
+    border: 2px solid #e0ad45;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 12px rgba(255, 190, 50, 0.5);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.achievement-notification-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+.achievement-notification-title {
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    color: #ffd45c;
+
+    text-shadow:
+        0 2px 2px #000;
+}
+
+
+.achievement-notification-name {
+
+    margin-top: 3px;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    color: #fff;
+
+    text-shadow:
+        0 2px 3px #000;
+}
+
+
+.achievement-notification-reward {
+
+    margin-top: 2px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #9cff75;
+
+    text-shadow:
+        0 1px 2px #000;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.achievement-notification-glow {
+
+    position: absolute;
+
+    inset: -50%;
+
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 210, 80, 0.18),
+        transparent 60%
+    );
+
+    animation: achievementGlow 2s ease-in-out infinite;
+}
+
+
+@keyframes achievementGlow {
+
+    0% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+}
+
+
+/* Keep content above glow */
+
+.achievement-notification-icon,
+.achievement-notification-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #achievementNotification {
+
+        top: 15px;
+
+        width: 90vw;
+
+        min-height: 72px;
+
+        padding: 10px 12px;
+    }
+
+
+    .achievement-notification-icon {
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 27px;
+    }
+
+
+    .achievement-notification-title {
+        font-size: 11px;
+    }
+
+
+    .achievement-notification-name {
+        font-size: 16px;
+    }
+
+
+    .achievement-notification-reward {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   FIELD HARVEST TIME TOOLTIP
+========================================================= */
+
+.fieldHarvestTooltip {
+    position: fixed !important;
+    z-index: 2147483648 !important;
+
+    background: #222 !important;
+    color: white !important;
+
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    line-height: 1.5 !important;
+
+    white-space: nowrap !important;
+
+    pointer-events: none !important;
+
+    display: none;
+
+    visibility: visible;
+
+    opacity: 1;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5);
+
+}
