@@ -19237,6 +19237,8 @@ const onShowRewardCallback =
            SEND REQUEST TO RENDER
         ================================================= */
 
+alert("NEW TADS SERVER TEST CODE");
+       
         try {
 
             const response =
