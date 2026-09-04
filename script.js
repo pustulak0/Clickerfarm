@@ -19004,63 +19004,9 @@ const adsUpgradesOverlay =
 const closeAdsUpgrades =
     document.getElementById("closeAdsUpgrades");
 
+const adsUpgradePowerButton =
+    document.getElementById("adsUpgradePowerButton");
 
-console.log("ADS BUTTON:", adsUpgradesButton);
-console.log("ADS OVERLAY:", adsUpgradesOverlay);
-console.log("ADS CLOSE:", closeAdsUpgrades);
-
-
-/* =========================================================
-   OPEN
-========================================================= */
-
-if (adsUpgradesButton && adsUpgradesOverlay) {
-
-    adsUpgradesButton.addEventListener("click", () => {
-
-        console.log("🔥 ADS UPGRADES CLICKED");
-
-        adsUpgradesOverlay.style.display = "flex";
-
-    });
-
-}
-
-
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
-
-if (closeAdsUpgrades && adsUpgradesOverlay) {
-
-    closeAdsUpgrades.addEventListener("click", () => {
-
-        console.log("❌ ADS UPGRADES CLOSED");
-
-        adsUpgradesOverlay.style.display = "none";
-
-    });
-
-}
-
-
-/* =========================================================
-   CLOSE OUTSIDE
-========================================================= */
-
-if (adsUpgradesOverlay) {
-
-    adsUpgradesOverlay.addEventListener("click", (event) => {
-
-        if (event.target === adsUpgradesOverlay) {
-
-            adsUpgradesOverlay.style.display = "none";
-
-        }
-
-    });
-
-}
 
 /* =========================================================
    ADS UPGRADE COOLDOWN
@@ -19069,14 +19015,23 @@ if (adsUpgradesOverlay) {
 const ADS_UPGRADE_COOLDOWN =
     30 * 60 * 1000; // 30 minutes
 
-let adsUpgradeCooldownUntil =
-    Number(localStorage.getItem("adsUpgradeCooldownUntil")) || 0;
+let adsUpgradeLoading = false;
 
-    /* =========================================================
-   ADS UPGRADE LOADING
+
+/* =========================================================
+   GET COOLDOWN
 ========================================================= */
 
-let adsUpgradeLoading = false;
+function getAdsUpgradeCooldownUntil() {
+
+    return Number(
+        localStorage.getItem(
+            "adsUpgradeCooldownUntil"
+        )
+    ) || 0;
+
+}
+
 
 /* =========================================================
    CHECK COOLDOWN
@@ -19084,46 +19039,39 @@ let adsUpgradeLoading = false;
 
 function isAdsUpgradeOnCooldown() {
 
-    return Date.now() < adsUpgradeCooldownUntil;
+    return Date.now() <
+        getAdsUpgradeCooldownUntil();
 
 }
 
 
 /* =========================================================
-   UPDATE BUTTON
+   UPDATE ADS BUTTON
 ========================================================= */
 
 function updateAdsUpgradeButton() {
 
     const button =
-        document.getElementById("adsUpgradePowerButton");
+        document.getElementById(
+            "adsUpgradePowerButton"
+        );
 
-    if (!button) return;
+    if (!button) {
+        return;
+    }
 
+    const cooldownUntil =
+        getAdsUpgradeCooldownUntil();
 
     const remaining =
-        adsUpgradeCooldownUntil - Date.now();
+        cooldownUntil - Date.now();
 
 
-    if (remaining > 0) {
+    /* =====================================================
+       READY
+    ===================================================== */
 
-        const totalSeconds =
-            Math.ceil(remaining / 1000);
-
-        const minutes =
-            Math.floor(totalSeconds / 60);
-
-        const seconds =
-            totalSeconds % 60;
-
-
-        button.disabled = true;
-
-        button.innerHTML =
-            `⏳ ${minutes}:${String(seconds).padStart(2, "0")}
-             <small>COOLDOWN</small>`;
-
-    } else {
+    if (remaining <= 0) {
 
         button.disabled = false;
 
@@ -19131,191 +19079,377 @@ function updateAdsUpgradeButton() {
             `📺 WATCH AD
              <small>+1 POWER</small>`;
 
+        return;
     }
 
+
+    /* =====================================================
+       COOLDOWN
+    ===================================================== */
+
+    const totalSeconds =
+        Math.ceil(
+            remaining / 1000
+        );
+
+    const minutes =
+        Math.floor(
+            totalSeconds / 60
+        );
+
+    const seconds =
+        totalSeconds % 60;
+
+    button.disabled = true;
+
+    button.innerHTML =
+        `⏳ ${minutes}:${String(seconds).padStart(2, "0")}
+         <small>COOLDOWN</small>`;
 }
+
+
+/* =========================================================
+   OPEN ADS UPGRADES
+========================================================= */
+
+if (
+    adsUpgradesButton &&
+    adsUpgradesOverlay
+) {
+
+    adsUpgradesButton.addEventListener(
+        "click",
+        () => {
+
+            console.log(
+                "🔥 ADS UPGRADES CLICKED"
+            );
+
+            adsUpgradesOverlay.style.display =
+                "flex";
+
+            updateAdsUpgradeButton();
+        }
+    );
+}
+
+
+/* =========================================================
+   CLOSE ADS UPGRADES
+========================================================= */
+
+if (
+    closeAdsUpgrades &&
+    adsUpgradesOverlay
+) {
+
+    closeAdsUpgrades.addEventListener(
+        "click",
+        () => {
+
+            console.log(
+                "❌ ADS UPGRADES CLOSED"
+            );
+
+            adsUpgradesOverlay.style.display =
+                "none";
+        }
+    );
+}
+
+
+/* =========================================================
+   CLOSE WHEN CLICKING OUTSIDE
+========================================================= */
+
+if (adsUpgradesOverlay) {
+
+    adsUpgradesOverlay.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target ===
+                adsUpgradesOverlay
+            ) {
+
+                adsUpgradesOverlay.style.display =
+                    "none";
+            }
+        }
+    );
+}
+
 
 /* =========================================================
    TADS REWARDED ADS
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+const WIDGET_ID =
+    "11924";
 
-    const WIDGET_ID = "11924";
-
-    const IS_DEBUG = true;
-
-    const btnIdSelector = "adsUpgradePowerButton";
+const IS_DEBUG =
+    true;
 
 
-    /* =========================
-       REWARD CALLBACK
-    ========================= */
+/* =========================================================
+   TADS REWARD
+========================================================= */
 
- const onShowRewardCallback = (result) => {
+const onShowRewardCallback =
+    (result) => {
 
-    console.log(
-        "TADS: AD WATCHED - REWARD:",
-        result
-    );
-
-
-    /* =========================
-       FREE UPGRADE
-    ========================= */
-
-    power += 1;
-
-    upgradeCost =
-        Math.floor(upgradeCost * 1.5);
+        console.log(
+            "TADS: AD WATCHED - REWARD:",
+            result
+        );
 
 
-    /* =========================
-       START 30 MIN COOLDOWN
-    ========================= */
+        /* =================================================
+           FREE POWER UPGRADE
+        ================================================= */
 
-    adsUpgradeCooldownUntil =
-        Date.now() + ADS_UPGRADE_COOLDOWN;
+        power += 1;
 
-    localStorage.setItem(
-        "adsUpgradeCooldownUntil",
-        adsUpgradeCooldownUntil
-    );
-
-
-    /* =========================
-       SAVE GAME
-    ========================= */
-
-    saveGame();
-
-    updateDisplay();
-
-    updateAdsUpgradeButton();
+        upgradeCost =
+            Math.floor(
+                upgradeCost * 1.5
+            );
 
 
-    console.log(
-        "AD UPGRADE DONE:",
-        power,
-        upgradeCost
-    );
+        /* =================================================
+           START 30 MINUTE COOLDOWN
+        ================================================= */
 
-};
+        const cooldownUntil =
+            Date.now() +
+            ADS_UPGRADE_COOLDOWN;
 
-    /* =========================
-       NO ADS CALLBACK
-    ========================= */
+        localStorage.setItem(
+            "adsUpgradeCooldownUntil",
+            String(cooldownUntil)
+        );
 
-    const onAdsNotFound = () => {
+
+        console.log(
+            "TADS COOLDOWN UNTIL:",
+            cooldownUntil
+        );
+
+
+        /* =================================================
+           SAVE GAME
+        ================================================= */
+
+        saveGame();
+
+
+        /* =================================================
+           UPDATE GAME
+        ================================================= */
+
+        updateDisplay();
+
+
+        /* =================================================
+           UPDATE ADS BUTTON
+        ================================================= */
+
+        updateAdsUpgradeButton();
+
+
+        console.log(
+            "AD UPGRADE DONE:",
+            power,
+            upgradeCost
+        );
+    };
+
+
+/* =========================================================
+   NO ADS
+========================================================= */
+
+const onAdsNotFound =
+    () => {
 
         console.log(
             "TADS: NO ADS FOUND"
         );
-
     };
 
 
-    /* =========================
-       INITIALIZE TADS
-    ========================= */
+/* =========================================================
+   INITIALIZE TADS
+========================================================= */
 
-    const adController = window.tads.init({
+let adController = null;
 
-        widgetId: WIDGET_ID,
+if (
+    window.tads &&
+    typeof window.tads.init === "function"
+) {
 
-        type: "fullscreen",
+    adController =
+        window.tads.init({
 
-        debug: IS_DEBUG,
+            widgetId:
+                WIDGET_ID,
 
-        onShowReward: onShowRewardCallback,
+            type:
+                "fullscreen",
 
-        onAdsNotFound: onAdsNotFound
+            debug:
+                IS_DEBUG,
 
-    });
+            onShowReward:
+                onShowRewardCallback,
 
-    /* =========================
-       WATCH AD BUTTON
-    ========================= */
+            onAdsNotFound:
+                onAdsNotFound
+        });
 
-    const button =
-        document.getElementById(btnIdSelector);
+    console.log(
+        "TADS: INITIALIZED"
+    );
+
+} else {
+
+    console.error(
+        "TADS: window.tads NOT FOUND"
+    );
+}
 
 
-    if (!button) {
+/* =========================================================
+   WATCH AD BUTTON
+========================================================= */
 
-        console.error(
-            "TADS: WATCH AD BUTTON NOT FOUND"
-        );
+if (adsUpgradePowerButton) {
 
-        return;
+    adsUpgradePowerButton.addEventListener(
+        "click",
+        () => {
 
-    }
+            /* =============================================
+               COOLDOWN
+            ============================================= */
 
-button.addEventListener("click", () => {
+            if (
+                isAdsUpgradeOnCooldown()
+            ) {
 
-    /* =========================
-       CHECK COOLDOWN
-    ========================= */
+                console.log(
+                    "TADS: AD UPGRADE IS ON COOLDOWN"
+                );
 
-    if (isAdsUpgradeOnCooldown()) {
+                updateAdsUpgradeButton();
 
-        console.log(
-            "TADS: AD UPGRADE IS ON COOLDOWN"
-        );
+                return;
+            }
+
+
+            /* =============================================
+               TADS NOT LOADED
+            ============================================= */
+
+            if (!adController) {
+
+                console.error(
+                    "TADS: AD CONTROLLER NOT AVAILABLE"
+                );
+
+                return;
+            }
+
+
+            /* =============================================
+               PREVENT DOUBLE CLICK
+            ============================================= */
+
+            if (adsUpgradeLoading) {
+
+                console.log(
+                    "TADS: AD IS ALREADY LOADING"
+                );
+
+                return;
+            }
+
+
+            adsUpgradeLoading =
+                true;
+
+
+            console.log(
+                "TADS: WATCH AD BUTTON CLICKED"
+            );
+
+
+            /* =============================================
+               LOAD AD
+            ============================================= */
+
+            adController
+                .loadAd()
+
+                .then(
+                    () => {
+
+                        console.log(
+                            "TADS: AD LOADED - SHOWING"
+                        );
+
+                        return (
+                            adController.showAd()
+                        );
+                    }
+                )
+
+                .catch(
+                    (error) => {
+
+                        console.error(
+                            "TADS: SHOW ERROR:",
+                            error
+                        );
+                    }
+                )
+
+                .finally(
+                    () => {
+
+                        adsUpgradeLoading =
+                            false;
+                    }
+                );
+        }
+    );
+
+} else {
+
+    console.error(
+        "TADS: WATCH AD BUTTON NOT FOUND"
+    );
+}
+
+
+/* =========================================================
+   COOLDOWN TIMER
+========================================================= */
+
+setInterval(
+    () => {
 
         updateAdsUpgradeButton();
 
-        return;
-    }
+    },
+    1000
+);
 
 
-    /* =========================
-       PREVENT DOUBLE CLICK
-    ========================= */
+/* =========================================================
+   INITIAL BUTTON STATE
+========================================================= */
 
-    if (adsUpgradeLoading) {
-
-        console.log(
-            "TADS: AD IS ALREADY LOADING"
-        );
-
-        return;
-    }
-
-
-    adsUpgradeLoading = true;
-
-
-    console.log(
-        "TADS: WATCH AD BUTTON CLICKED"
-    );
-
-
-    adController
-        .loadAd()
-        .then(() => {
-
-            console.log(
-                "TADS: AD LOADED - SHOWING"
-            );
-
-            return adController.showAd();
-
-        })
-        .catch((result) => {
-
-            console.error(
-                "TADS: SHOW ERROR:",
-                result
-            );
-
-        })
-        .finally(() => {
-
-            adsUpgradeLoading = false;
-
-        });
-
-});
-
-});
+updateAdsUpgradeButton();
